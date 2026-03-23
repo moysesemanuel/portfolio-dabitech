@@ -85,6 +85,19 @@ function buildCustomerWhatsappMessage(params: BookingSuccessState) {
   ].join("\n");
 }
 
+function getBusinessMapQuery(config: SiteConfig) {
+  return [
+    config.address,
+    config.addressNumber,
+    config.neighborhood,
+    config.city,
+    config.zipCode,
+    "Brasil",
+  ]
+    .filter(Boolean)
+    .join(", ");
+}
+
 function Header({ config }: { config: SiteConfig }) {
   return (
     <header className={styles.header}>
@@ -640,6 +653,16 @@ function TestimonialsSection({ config }: { config: SiteConfig }) {
 
 function ContactSection({ config }: { config: SiteConfig }) {
   const businessAddress = useMemo(() => getBusinessAddress(config), [config]);
+  const mapQuery = useMemo(() => getBusinessMapQuery(config), [config]);
+  const mapUrl = useMemo(() => {
+    return `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`;
+  }, [mapQuery]);
+  const googleMapsDirectionsUrl = useMemo(() => {
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(mapQuery)}`;
+  }, [mapQuery]);
+  const wazeDirectionsUrl = useMemo(() => {
+    return `https://www.waze.com/ul?q=${encodeURIComponent(mapQuery)}&navigate=yes`;
+  }, [mapQuery]);
 
   return (
     <section className={styles.contactSection} id="contato">
@@ -668,6 +691,49 @@ function ContactSection({ config }: { config: SiteConfig }) {
         <a className={styles.primary} href={`https://wa.me/55${config.whatsapp.replace(/\D/g, "")}`}>
           Agendar pelo WhatsApp
         </a>
+      </div>
+
+      <div className={styles.contactMapCard}>
+        <div className={styles.contactMapHeader}>
+          <span className={styles.contactLabel}>Mapa</span>
+          <p>Veja a localização da barbearia.</p>
+        </div>
+        <div className={styles.contactMapFrame}>
+          <div className={styles.contactMapActions}>
+            <a
+              className={styles.mapActionButton}
+              href={googleMapsDirectionsUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir rota no Google Maps"
+              title="Abrir rota no Google Maps"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className={styles.mapActionIcon}
+                src="/img/Google_Maps_Logo_2020.svg"
+                alt=""
+              />
+            </a>
+            <a
+              className={styles.mapActionButton}
+              href={wazeDirectionsUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir rota no Waze"
+              title="Abrir rota no Waze"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className={styles.mapActionIcon} src="/img/waze.svg" alt="" />
+            </a>
+          </div>
+          <iframe
+            title={`Mapa de ${config.businessName}`}
+            src={mapUrl}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </div>
     </section>
   );
