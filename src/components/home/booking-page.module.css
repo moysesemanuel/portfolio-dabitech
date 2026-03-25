@@ -479,8 +479,34 @@
     width: min(1120px, calc(100% - 32px));
   }
 
+  .heroShell {
+    padding-top: 182px;
+  }
+
+  .main,
+  .bookingInner {
+    padding-top: 24px;
+  }
+
   .sideInfoCard,
   .tabPanel {
     padding: 22px;
+  }
+
+  .tabsNav,
+  .pagination {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .tabButton,
+  .primaryActionButton,
+  .secondaryActionButton,
+  .paginationButton {
+    width: 100%;
+  }
+
+  .mosaicGrid {
+    grid-template-rows: repeat(3, minmax(150px, 1fr));
   }
 }

@@ -23,6 +23,7 @@ function formatDateToPtBr(date: string) {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
+    timeZone: "UTC",
   }).format(new Date(`${date}T12:00:00`));
 }
 
@@ -30,7 +31,7 @@ function getDateParts(date: string) {
   const baseDate = new Date(`${date}T12:00:00`);
 
   return {
-    day: new Intl.DateTimeFormat("pt-BR", { day: "2-digit" }).format(baseDate),
+    day: new Intl.DateTimeFormat("pt-BR", { day: "2-digit", timeZone: "UTC" }).format(baseDate),
     month: new Intl.DateTimeFormat("pt-BR", { month: "short" })
       .format(baseDate)
       .replace(".", "")
@@ -43,6 +44,7 @@ function formatMonthYear(date: Date) {
   return new Intl.DateTimeFormat("pt-BR", {
     month: "long",
     year: "numeric",
+    timeZone: "UTC",
   }).format(date);
 }
 
@@ -55,6 +57,7 @@ function formatAppointmentTime(date: string) {
   return new Intl.DateTimeFormat("pt-BR", {
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "UTC",
   }).format(new Date(date));
 }
 
@@ -489,7 +492,11 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
 
     const savedSoundPreference =
       window.localStorage.getItem(ADMIN_SOUND_ALERTS_STORAGE_KEY) === "enabled";
-    setSoundAlertsEnabled(savedSoundPreference);
+    setSoundAlertsEnabled(
+      window.localStorage.getItem(ADMIN_SOUND_ALERTS_STORAGE_KEY) === null
+        ? true
+        : savedSoundPreference,
+    );
 
     if (!("Notification" in window)) {
       return;
@@ -519,25 +526,25 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
       const gainNode = audioContext.createGain();
       const currentTime = audioContext.currentTime;
 
-      oscillator.type = "sine";
-      oscillator.frequency.setValueAtTime(880, currentTime);
-      oscillator.frequency.exponentialRampToValueAtTime(660, currentTime + 0.18);
+      oscillator.type = "triangle";
+      oscillator.frequency.setValueAtTime(1046, currentTime);
+      oscillator.frequency.exponentialRampToValueAtTime(784, currentTime + 0.22);
 
       gainNode.gain.setValueAtTime(0.0001, currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.16, currentTime + 0.02);
-      gainNode.gain.exponentialRampToValueAtTime(0.0001, currentTime + 0.28);
+      gainNode.gain.exponentialRampToValueAtTime(0.24, currentTime + 0.02);
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, currentTime + 0.34);
 
       oscillator.connect(gainNode);
       gainNode.connect(audioContext.destination);
 
       oscillator.start(currentTime);
-      oscillator.stop(currentTime + 0.3);
+      oscillator.stop(currentTime + 0.36);
 
       window.setTimeout(() => {
         void audioContext.close().catch(() => {
           // noop
         });
-      }, 450);
+      }, 550);
     } catch {
       // noop: fallback silencioso
     }

@@ -455,7 +455,13 @@ export function Header({
               </button>
             </div>
 
-            <div className={flowStyles.fieldGrid}>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                void handleHeaderCustomerAccess();
+              }}
+            >
+              <div className={flowStyles.fieldGrid}>
               {authMode === "register" ? (
                 <label className={flowStyles.field}>
                   <span>Nome completo</span>
@@ -489,34 +495,31 @@ export function Header({
                   <input value={authPhone} onChange={(event) => setAuthPhone(event.target.value)} />
                 </label>
               ) : null}
-            </div>
+              </div>
 
-            {authError ? (
-              <div className={`${flowStyles.feedback} ${flowStyles.feedbackError}`}>{authError}</div>
-            ) : null}
+              {authError ? (
+                <div className={`${flowStyles.feedback} ${flowStyles.feedbackError}`}>{authError}</div>
+              ) : null}
 
-            <div className={flowStyles.modalActions}>
-              <button
-                className={flowStyles.modalSecondaryButton}
-                onClick={() => setIsAuthModalOpen(false)}
-                type="button"
-              >
-                Fechar
-              </button>
-              <button
-                className={flowStyles.modalPrimaryButton}
-                onClick={() => void handleHeaderCustomerAccess()}
-                type="button"
-              >
-                {isSubmittingAuth
-                  ? authMode === "login"
-                    ? "Entrando..."
-                    : "Criando conta..."
-                  : authMode === "login"
-                    ? "Entrar"
-                    : "Criar conta"}
-              </button>
-            </div>
+              <div className={flowStyles.modalActions}>
+                <button
+                  className={flowStyles.modalSecondaryButton}
+                  onClick={() => setIsAuthModalOpen(false)}
+                  type="button"
+                >
+                  Fechar
+                </button>
+                <button className={flowStyles.modalPrimaryButton} type="submit">
+                  {isSubmittingAuth
+                    ? authMode === "login"
+                      ? "Entrando..."
+                      : "Criando conta..."
+                    : authMode === "login"
+                      ? "Entrar"
+                      : "Criar conta"}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       ) : null}

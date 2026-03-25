@@ -518,12 +518,22 @@
 
   .header {
     grid-template-columns: 1fr;
-    justify-items: start;
+    justify-items: stretch;
+    align-items: start;
+    gap: 14px;
+    height: auto;
+    padding: 14px 24px;
   }
 
   .nav {
     justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .headerActions {
+    width: 100%;
+    justify-content: flex-end;
   }
 
   .footerInner {
@@ -537,6 +547,36 @@
   .main,
   .contentInner {
     width: min(1120px, calc(100% - 32px));
+  }
+
+  .heroShell {
+    padding-top: 174px;
+  }
+
+  .header {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    width: auto;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 1.35rem;
+  }
+
+  .brandTag {
+    font-size: 0.82rem;
+  }
+
+  .nav {
+    gap: 12px;
+    font-size: 0.95rem;
+  }
+
+  .headerActions {
+    justify-content: space-between;
   }
 
   .heroContent,

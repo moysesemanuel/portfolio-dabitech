@@ -471,7 +471,13 @@ export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
               </button>
             </div>
 
-            <div className={styles.fieldGrid}>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                void handleCustomerAccess();
+              }}
+            >
+              <div className={styles.fieldGrid}>
               {authMode === "register" ? (
                 <label className={styles.field}>
                   <span>Nome completo</span>
@@ -505,26 +511,27 @@ export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
                   <input value={authPhone} onChange={(event) => setAuthPhone(event.target.value)} />
                 </label>
               ) : null}
-            </div>
+              </div>
 
-            {authError ? (
-              <div className={`${styles.feedback} ${styles.feedbackError}`}>{authError}</div>
-            ) : null}
+              {authError ? (
+                <div className={`${styles.feedback} ${styles.feedbackError}`}>{authError}</div>
+              ) : null}
 
-            <div className={styles.modalActions}>
-              <button className={styles.modalSecondaryButton} onClick={() => setIsAuthModalOpen(false)} type="button">
-                Fechar
-              </button>
-              <button className={styles.modalPrimaryButton} onClick={() => void handleCustomerAccess()} type="button">
-                {isSubmittingAuth
-                  ? authMode === "login"
-                    ? "Entrando..."
-                    : "Criando conta..."
-                  : authMode === "login"
-                    ? "Entrar"
-                    : "Criar conta"}
-              </button>
-            </div>
+              <div className={styles.modalActions}>
+                <button className={styles.modalSecondaryButton} onClick={() => setIsAuthModalOpen(false)} type="button">
+                  Fechar
+                </button>
+                <button className={styles.modalPrimaryButton} type="submit">
+                  {isSubmittingAuth
+                    ? authMode === "login"
+                      ? "Entrando..."
+                      : "Criando conta..."
+                    : authMode === "login"
+                      ? "Entrar"
+                      : "Criar conta"}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       ) : null}
