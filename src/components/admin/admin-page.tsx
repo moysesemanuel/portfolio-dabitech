@@ -16,6 +16,7 @@ import {
   type LoyaltyTierItem,
   writeSiteConfig,
 } from "@/components/shared/site-config";
+import { useToast } from "@/components/shared/toast-provider";
 import { buildWhatsappUrl } from "@/components/shared/whatsapp";
 
 function formatDateToPtBr(date: string) {
@@ -419,6 +420,7 @@ function InlineCalendar({ value, onChange }: DatePickerFieldProps) {
 }
 
 export function AdminPage({ section = "overview" }: { section?: AdminSectionView }) {
+  const { showToast } = useToast();
   const pathname = usePathname();
   const siteConfigSnapshot = useSiteConfig();
   const [config, setConfig] = useState(siteConfigSnapshot);
@@ -522,29 +524,37 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
 
     try {
       const audioContext = new AudioContextConstructor();
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
       const currentTime = audioContext.currentTime;
 
-      oscillator.type = "triangle";
-      oscillator.frequency.setValueAtTime(1046, currentTime);
-      oscillator.frequency.exponentialRampToValueAtTime(784, currentTime + 0.22);
+      const playTone = (startTime: number, frequency: number, duration: number) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
 
-      gainNode.gain.setValueAtTime(0.0001, currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.24, currentTime + 0.02);
-      gainNode.gain.exponentialRampToValueAtTime(0.0001, currentTime + 0.34);
+        oscillator.type = "triangle";
+        oscillator.frequency.setValueAtTime(frequency, startTime);
+        oscillator.frequency.exponentialRampToValueAtTime(
+          Math.max(frequency * 0.86, 220),
+          startTime + duration,
+        );
 
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
+        gainNode.gain.setValueAtTime(0.0001, startTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.18, startTime + 0.02);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
 
-      oscillator.start(currentTime);
-      oscillator.stop(currentTime + 0.36);
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.start(startTime);
+        oscillator.stop(startTime + duration + 0.02);
+      };
+
+      playTone(currentTime, 988, 0.16);
+      playTone(currentTime + 0.22, 1318, 0.18);
 
       window.setTimeout(() => {
         void audioContext.close().catch(() => {
           // noop
         });
-      }, 550);
+      }, 700);
     } catch {
       // noop: fallback silencioso
     }
@@ -696,14 +706,18 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
 
   async function enableBrowserNotifications() {
     if (typeof window === "undefined" || !("Notification" in window)) {
-      setNotificationFeedback("Este navegador não suporta notificações.");
+      const message = "Este navegador não suporta notificações.";
+      setNotificationFeedback(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
     if (window.Notification.permission === "granted") {
       window.localStorage.setItem(ADMIN_NOTIFICATIONS_STORAGE_KEY, "enabled");
       setNotificationsEnabled(true);
-      setNotificationFeedback("Alertas do navegador já estão ativos.");
+      const message = "Alertas do navegador já estão ativos.";
+      setNotificationFeedback(message);
+      showToast({ variant: "success", message });
       return;
     }
 
@@ -712,11 +726,15 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
     if (permission === "granted") {
       window.localStorage.setItem(ADMIN_NOTIFICATIONS_STORAGE_KEY, "enabled");
       setNotificationsEnabled(true);
-      setNotificationFeedback("Alertas ativados para novos agendamentos.");
+      const message = "Alertas ativados para novos agendamentos.";
+      setNotificationFeedback(message);
+      showToast({ variant: "success", message });
       return;
     }
 
-    setNotificationFeedback("Permissão de notificação não concedida.");
+    const message = "Permissão de notificação não concedida.";
+    setNotificationFeedback(message);
+    showToast({ variant: "warning", message });
   }
 
   function toggleSoundAlerts() {
@@ -735,6 +753,12 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
         ? "Som ativado para novos agendamentos."
         : "Som desativado para novos agendamentos.",
     );
+    showToast({
+      variant: nextValue ? "success" : "warning",
+      message: nextValue
+        ? "Som ativado para novos agendamentos."
+        : "Som desativado para novos agendamentos.",
+    });
 
     if (nextValue) {
       playNewAppointmentSound();
@@ -895,6 +919,7 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
       services: current.services.filter((_, serviceIndex) => serviceIndex !== index),
     }));
     setStatusMessage("Serviço removido. Salve para aplicar no site.");
+    showToast({ variant: "warning", title: "Aviso", message: "Serviço removido. Salve para aplicar no site." });
   }
 
   function openCreateServiceModal() {
@@ -941,14 +966,18 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
 
   function createService() {
     if (!newService.name.trim() || !newService.price.trim() || !newService.duration.trim()) {
-      setStatusMessage("Preencha nome, preço, duração e descrição para criar o serviço.");
+      const message = "Preencha nome, preço, duração e descrição para criar o serviço.";
+      setStatusMessage(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
     if (!newService.description.trim()) {
       setNewServiceDescriptionInvalid(true);
       newServiceDescriptionInputRef.current?.focus();
-      setStatusMessage("Preencha a descrição para criar o serviço.");
+      const message = "Preencha a descrição para criar o serviço.";
+      setStatusMessage(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
@@ -967,6 +996,7 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
       ],
     }));
     setStatusMessage("Serviço adicionado. Salve para aplicar no site.");
+    showToast({ variant: "success", message: "Serviço adicionado. Salve para aplicar no site." });
     setNewServiceDescriptionInvalid(false);
     setIsCreateServiceModalOpen(false);
   }
@@ -983,6 +1013,7 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
     setBarberName("");
     setBarberRole("");
     setStatusMessage("Barbeiro adicionado. Salve para aplicar no site.");
+    showToast({ variant: "success", message: "Barbeiro adicionado. Salve para aplicar no site." });
   }
 
   function removeBarber(name: string) {
@@ -991,6 +1022,7 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
       barbers: current.barbers.filter((barber) => barber.name !== name),
     }));
     setStatusMessage("Barbeiro removido. Salve para aplicar no site.");
+    showToast({ variant: "warning", title: "Aviso", message: "Barbeiro removido. Salve para aplicar no site." });
   }
 
   function addClosedDate() {
@@ -1011,6 +1043,7 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
     }));
     setClosingReason("");
     setStatusMessage("Data bloqueada adicionada. Salve para aplicar no site.");
+    showToast({ variant: "success", message: "Data bloqueada adicionada. Salve para aplicar no site." });
   }
 
   function removeClosedDate(date: string) {
@@ -1022,6 +1055,7 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
         : current.ignoredHolidayDates,
     }));
     setStatusMessage("Data bloqueada removida. Salve para aplicar no site.");
+    showToast({ variant: "warning", title: "Aviso", message: "Data bloqueada removida. Salve para aplicar no site." });
   }
 
   function confirmRemoval() {
@@ -1073,12 +1107,14 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
 
       writeSiteConfig(config);
       setStatusMessage("Alterações salvas no site e sincronizadas com a agenda.");
+      showToast({ variant: "success", message: "Alterações salvas no site e sincronizadas com a agenda." });
     } catch (error) {
-      setStatusMessage(
+      const message =
         error instanceof Error
           ? error.message
-          : "Nao foi possivel sincronizar os dados com a agenda.",
-      );
+          : "Nao foi possivel sincronizar os dados com a agenda.";
+      setStatusMessage(message);
+      showToast({ variant: "error", message });
     } finally {
       setSavingSync(false);
     }
@@ -1107,6 +1143,7 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
         ),
       }));
       setStatusMessage("Imagem atualizada. Salve para aplicar no site.");
+      showToast({ variant: "success", message: "Imagem atualizada. Salve para aplicar no site." });
     };
     reader.readAsDataURL(file);
   }
@@ -1130,6 +1167,7 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
         ),
       }));
       setStatusMessage("Imagem do serviço atualizada. Salve para aplicar no site.");
+      showToast({ variant: "success", message: "Imagem do serviço atualizada. Salve para aplicar no site." });
     };
     reader.readAsDataURL(file);
   }
@@ -1589,14 +1627,16 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
       );
       setAppointmentsRefreshToken((current) => current + 1);
       setStatusMessage("Agendamento confirmado e mensagem aberta no WhatsApp.");
+      showToast({ variant: "success", message: "Agendamento confirmado e mensagem aberta no WhatsApp." });
       dismissAppointmentAlert(appointment.id);
       openAppointmentWhatsapp(updatedAppointment);
     } catch (error) {
-      setStatusMessage(
+      const message =
         error instanceof Error
           ? error.message
-          : "Nao foi possivel confirmar o agendamento.",
-      );
+          : "Nao foi possivel confirmar o agendamento.";
+      setStatusMessage(message);
+      showToast({ variant: "error", message });
     } finally {
       setUpdatingAppointmentId(null);
     }
@@ -1631,15 +1671,17 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
       );
       setAppointmentsRefreshToken((current) => current + 1);
       setStatusMessage("Agendamento cancelado e mensagem aberta no WhatsApp.");
+      showToast({ variant: "warning", title: "Aviso", message: "Agendamento cancelado e mensagem aberta no WhatsApp." });
       setCancelingAppointment(null);
       dismissAppointmentAlert(appointment.id);
       openAppointmentCancellationWhatsapp(updatedAppointment);
     } catch (error) {
-      setStatusMessage(
+      const message =
         error instanceof Error
           ? error.message
-          : "Nao foi possivel cancelar o agendamento.",
-      );
+          : "Nao foi possivel cancelar o agendamento.";
+      setStatusMessage(message);
+      showToast({ variant: "error", message });
     } finally {
       setUpdatingAppointmentId(null);
     }
@@ -1662,7 +1704,9 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
 
   async function saveReschedule() {
     if (!editingAppointmentId || !rescheduleTime) {
-      setRescheduleMessage("Selecione um novo horario para remarcar.");
+      const message = "Selecione um novo horario para remarcar.";
+      setRescheduleMessage(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
@@ -1703,14 +1747,16 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
         ),
       );
       setStatusMessage("Agendamento remarcado com sucesso.");
+      showToast({ variant: "success", message: "Agendamento remarcado com sucesso." });
       setAppointmentsRefreshToken((current) => current + 1);
       cancelReschedule();
     } catch (error) {
-      setRescheduleMessage(
+      const message =
         error instanceof Error
           ? error.message
-          : "Nao foi possivel remarcar o agendamento.",
-      );
+          : "Nao foi possivel remarcar o agendamento.";
+      setRescheduleMessage(message);
+      showToast({ variant: "error", message });
     } finally {
       setUpdatingAppointmentId(null);
     }
@@ -1718,7 +1764,9 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
 
   async function createManualAppointment() {
     if (!manualTime || !manualCustomerName.trim() || !manualCustomerPhone.trim()) {
-      setManualMessage("Preencha cliente, WhatsApp e horário para agendar.");
+      const message = "Preencha cliente, WhatsApp e horário para agendar.";
+      setManualMessage(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
@@ -1752,12 +1800,17 @@ export function AdminPage({ section = "overview" }: { section?: AdminSectionView
       setManualNotes("");
       setAppointmentsDate(manualDate);
       setAppointmentsRefreshToken((current) => current + 1);
+      showToast({
+        variant: "success",
+        message: payload.message ?? "Agendamento manual criado com sucesso.",
+      });
     } catch (error) {
-      setManualMessage(
+      const message =
         error instanceof Error
           ? error.message
-          : "Nao foi possivel criar o agendamento.",
-      );
+          : "Nao foi possivel criar o agendamento.";
+      setManualMessage(message);
+      showToast({ variant: "error", message });
     } finally {
       setManualSubmitting(false);
     }

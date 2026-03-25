@@ -31,6 +31,7 @@ import {
   buildWhatsappUrl,
   formatWhatsappDisplay,
 } from "@/components/shared/whatsapp";
+import { useToast } from "@/components/shared/toast-provider";
 import { SectionHeading } from "./section-heading";
 
 const styles = {
@@ -146,6 +147,7 @@ export function Header({
   profileRole?: "CUSTOMER" | "ADMIN";
   onProfileLogout?: () => void;
 }) {
+  const { showToast } = useToast();
   const pathname = usePathname();
   const homePrefix = homeLinks ? "/#" : "#";
   const [currentHash, setCurrentHash] = useState("");
@@ -213,17 +215,23 @@ export function Header({
     setAuthError("");
 
     if (!authEmail.trim() || !authPassword.trim()) {
-      setAuthError("Preencha e-mail e senha para continuar.");
+      const message = "Preencha e-mail e senha para continuar.";
+      setAuthError(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
     if (authMode === "register" && !authName.trim()) {
-      setAuthError("Preencha seu nome para criar a conta.");
+      const message = "Preencha seu nome para criar a conta.";
+      setAuthError(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
     if (authMode === "register" && !authPhone.trim()) {
-      setAuthError("Preencha o WhatsApp para criar a conta.");
+      const message = "Preencha o WhatsApp para criar a conta.";
+      setAuthError(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
@@ -256,8 +264,15 @@ export function Header({
       setIsAuthModalOpen(false);
       setAuthPassword("");
       setIsProfileMenuOpen(false);
+      showToast({
+        variant: "success",
+        message: authMode === "login" ? "Login realizado com sucesso." : "Conta criada com sucesso.",
+      });
     } catch (error) {
-      setAuthError(error instanceof Error ? error.message : "Nao foi possivel acessar sua conta.");
+      const message =
+        error instanceof Error ? error.message : "Nao foi possivel acessar sua conta.";
+      setAuthError(message);
+      showToast({ variant: "error", message });
     } finally {
       setIsSubmittingAuth(false);
     }
@@ -347,6 +362,14 @@ export function Header({
                         <strong>{profileName}</strong>
                         <span>{profileSubtitle}</span>
                       </div>
+                      <Link
+                        className={styles.profileMetaLink}
+                        href="/agendamentos"
+                        onClick={() => setIsProfileMenuOpen(false)}
+                      >
+                        <span>Agendamentos</span>
+                        <strong>Gerenciar</strong>
+                      </Link>
                       <Link
                         className={styles.profileMetaLink}
                         href="/fidelidade"

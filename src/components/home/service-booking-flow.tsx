@@ -12,6 +12,7 @@ import layoutStyles from "./home-layout.module.css";
 import sectionStyles from "./home-sections.module.css";
 import flowStyles from "./service-booking-flow.module.css";
 import { type ServiceItem, type SiteConfig } from "@/components/shared/site-config";
+import { useToast } from "@/components/shared/toast-provider";
 
 const styles = {
   ...layoutStyles,
@@ -101,6 +102,7 @@ type SelectionState = {
 };
 
 export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
+  const { showToast } = useToast();
   const [customerSession, setCustomerSession] = useState<CustomerSession | null>(null);
   const [pendingService, setPendingService] = useState<ServiceItem | null>(null);
   const [selection, setSelection] = useState<SelectionState | null>(null);
@@ -228,17 +230,23 @@ export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
     setAuthError("");
 
     if (!authEmail.trim() || !authPassword.trim()) {
-      setAuthError("Preencha e-mail e senha para continuar.");
+      const message = "Preencha e-mail e senha para continuar.";
+      setAuthError(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
     if (authMode === "register" && !authName.trim()) {
-      setAuthError("Preencha seu nome para criar a conta.");
+      const message = "Preencha seu nome para criar a conta.";
+      setAuthError(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
     if (authMode === "register" && !authPhone.trim()) {
-      setAuthError("Preencha o WhatsApp para criar a conta.");
+      const message = "Preencha o WhatsApp para criar a conta.";
+      setAuthError(message);
+      showToast({ variant: "warning", message });
       return;
     }
 
@@ -271,6 +279,10 @@ export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
       setCustomerSession(payload.customer);
       setIsAuthModalOpen(false);
       setAuthPassword("");
+      showToast({
+        variant: "success",
+        message: authMode === "login" ? "Login realizado com sucesso." : "Conta criada com sucesso.",
+      });
 
       if (pendingService) {
         const nextService = pendingService;
@@ -278,7 +290,10 @@ export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
         startServiceFlow(nextService);
       }
     } catch (error) {
-      setAuthError(error instanceof Error ? error.message : "Nao foi possivel acessar sua conta.");
+      const message =
+        error instanceof Error ? error.message : "Nao foi possivel acessar sua conta.";
+      setAuthError(message);
+      showToast({ variant: "error", message });
     } finally {
       setIsSubmittingAuth(false);
     }
@@ -320,6 +335,10 @@ export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
         type: "success",
         message: payload.message ?? "Agendamento confirmado com sucesso.",
       });
+      showToast({
+        variant: "success",
+        message: payload.message ?? "Agendamento confirmado com sucesso.",
+      });
       setIsConfirmModalOpen(false);
       setIsSelectionModalOpen(false);
       setSelection(null);
@@ -327,10 +346,13 @@ export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
       setPreferSilent(false);
       setNotes("");
     } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Nao foi possivel concluir o agendamento.";
       setBookingFeedback({
         type: "error",
-        message: error instanceof Error ? error.message : "Nao foi possivel concluir o agendamento.",
+        message,
       });
+      showToast({ variant: "error", message });
     } finally {
       setIsSubmittingAppointment(false);
     }
@@ -375,6 +397,10 @@ export function ServiceBookingFlow({ config }: { config: SiteConfig }) {
     );
 
     writeBookingCart(nextItems);
+    showToast({
+      variant: "success",
+      message: "Serviço adicionado ao carrinho.",
+    });
     setBookingFeedback({
       type: "success",
       message: "Servico adicionado ao carrinho. Voce pode incluir outro atendimento antes de confirmar.",

@@ -26,14 +26,18 @@ export async function GET(request: NextRequest) {
     await ensureBookingSeedData();
 
     const date = request.nextUrl.searchParams.get("date");
-    const where = date
-      ? {
-          startsAt: {
-            gte: new Date(`${date}T00:00:00`),
-            lte: new Date(`${date}T23:59:59`),
-          },
-        }
-      : {};
+    const customerId = request.nextUrl.searchParams.get("customerId");
+    const where = {
+      ...(date
+        ? {
+            startsAt: {
+              gte: new Date(`${date}T00:00:00`),
+              lte: new Date(`${date}T23:59:59`),
+            },
+          }
+        : {}),
+      ...(customerId ? { customerId } : {}),
+    };
 
     const appointments = await prisma.appointment.findMany({
       where,
@@ -59,6 +63,8 @@ export async function GET(request: NextRequest) {
         endsAt: appointment.endsAt,
         barberName: appointment.barber.name,
         serviceName: appointment.service.name,
+        servicePriceInCents: appointment.service.priceInCents,
+        serviceDurationMinutes: appointment.service.durationMinutes,
       })),
     });
   } catch (error) {
