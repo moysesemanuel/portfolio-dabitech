@@ -47,16 +47,16 @@ const projects = [
     description:
       "Projeto conceitual para demonstrar um SaaS de vendas com posicionamento claro, funil comercial, indicadores e apresentação pensada para conversão.",
     meta: ["CRM comercial", "Funil de vendas", "Relatórios", "Landing page"],
-    href: "http://localhost:3002",
+    href: "/portfolio/sistema-vendas",
     imageSrc: "/img/portfolio-sales-system-preview.svg",
     imageAlt: "Preview da landing page do sistema de vendas",
     scopeTitle: "Escopo proposto",
     scopeDescription:
-      "Aplicacao standalone em `projects/sales-system`, com Prisma proprio, cadastros reais, vendas, estoque e financeiro desacoplados da barbearia.",
+      "Aplicação standalone em `projects/sales-system`, com Prisma próprio, cadastros reais, vendas, estoque e financeiro desacoplados da barbearia.",
     previewPoints: [
       "Visão do pipeline em tempo real",
       "Alertas de follow-up e reativação",
-      "Modulos para operacao, proposta e fechamento",
+      "Módulos para operação, proposta e fechamento",
     ],
   },
 ] as const;
@@ -206,8 +206,6 @@ export function PortfolioHomePage() {
                   <Link
                     className={styles.cta}
                     href={activeProject.href}
-                    target="_blank"
-                    rel="noreferrer"
                   >
                     Abrir projeto completo
                   </Link>

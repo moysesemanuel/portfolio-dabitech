@@ -35,6 +35,7 @@
   align-items: center;
   display: flex;
   gap: 14px;
+  min-width: 0;
 }
 
 .brand img {
@@ -68,6 +69,7 @@
   display: flex;
   gap: 22px;
   justify-content: center;
+  min-width: 0;
 }
 
 .nav a {
@@ -75,6 +77,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .cta {
@@ -116,6 +119,7 @@
 .heroPrimary {
   display: grid;
   gap: 40px;
+  min-width: 0;
 }
 
 .metricsBlock {
@@ -358,6 +362,7 @@
   display: grid;
   gap: 22px;
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  min-width: 0;
   padding: 30px;
 }
 
@@ -366,6 +371,7 @@
   align-content: start;
   gap: 16px;
   grid-template-rows: auto auto auto 1fr auto;
+  min-width: 0;
 }
 
 .projectCopy h3 {
@@ -380,7 +386,7 @@
 .projectMeta {
   display: grid;
   align-content: start;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(2, minmax(0, max-content));
   grid-auto-rows: min-content;
   gap: 7px;
 }
@@ -399,7 +405,7 @@
   text-align: center;
   width: fit-content;
   max-width: 100%;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .projectLinks {
@@ -433,6 +439,7 @@
   display: grid;
   gap: 12px;
   align-content: end;
+  min-width: 0;
 }
 
 .projectMedia img {
@@ -586,12 +593,18 @@
     align-items: start;
     display: flex;
     flex-direction: column;
+    gap: 14px;
     padding: 18px 16px;
+  }
+
+  .brand {
+    width: 100%;
   }
 
   .nav {
     flex-wrap: wrap;
     gap: 12px 18px;
+    justify-content: flex-start;
   }
 
   .hero {
@@ -613,6 +626,16 @@
     padding: 22px;
   }
 
+  .projectMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .projectMeta span {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 12px;
+  }
+
   .heroActions,
   .projectLinks,
   .footer {
@@ -624,5 +647,62 @@
   .secondaryCta,
   .ghostCta {
     width: 100%;
+  }
+
+  .footer {
+    padding-inline: 4px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    padding: 16px 14px;
+  }
+
+  .brand img {
+    height: 38px;
+  }
+
+  .brandCopy strong {
+    font-size: 1.55rem;
+  }
+
+  .hero {
+    gap: 24px;
+    padding: 176px 14px 36px;
+  }
+
+  .heroPrimary {
+    gap: 24px;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(2.2rem, 14vw, 3.3rem);
+    line-height: 0.98;
+  }
+
+  .content {
+    gap: 22px;
+    padding: 0 14px 56px;
+  }
+
+  .sectionCard,
+  .projectCard,
+  .heroPanel {
+    border-radius: 24px;
+    padding: 18px;
+  }
+
+  .projectCopy h3 {
+    font-size: 1.55rem;
+  }
+
+  .previewShot {
+    border-radius: 20px;
+  }
+
+  .miniPanel {
+    border-radius: 18px;
+    padding: 16px;
   }
 }
