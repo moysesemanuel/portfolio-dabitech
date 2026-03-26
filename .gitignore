@@ -15,6 +15,7 @@
 
 # next.js
 /.next/
+**/.next/
 /out/
 
 # production
@@ -36,6 +37,9 @@ yarn-error.log*
 # local database
 dev.db
 prisma/dev.db
+
+# nested project artifacts
+projects/**/generated/
 
 # vercel
 .vercel
