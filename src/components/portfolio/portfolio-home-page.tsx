@@ -59,6 +59,24 @@ const projects = [
       "Módulos para operação, proposta e fechamento",
     ],
   },
+  {
+    eyebrow: "Produto",
+    title: "Sistema de chamados com operação cliente e técnico",
+    description:
+      "Projeto de help desk com Kanban de tickets, login por perfil, modal operacional de atendimento, comentários, fluxo de status e visão separada para cliente e equipe técnica.",
+    meta: ["Help desk", "Kanban", "Atendimento", "Portal técnico"],
+    href: "/portfolio/sistema-chamados",
+    imageSrc: "/img/portfolio-support-tickets-preview.svg",
+    imageAlt: "Preview do sistema de chamados",
+    scopeTitle: "Escopo entregue",
+    scopeDescription:
+      "Aplicação standalone em `separated-repos/support-tickets-app`, com backend próprio, gestão de tickets, fluxo de resposta e interface operacional inspirada em centrais de atendimento.",
+    previewPoints: [
+      "Fila Kanban por etapa do atendimento",
+      "Modal de operação com chat e roteamento",
+      "Perfis distintos para cliente e técnico",
+    ],
+  },
 ] as const;
 
 export function PortfolioHomePage() {
@@ -126,33 +144,29 @@ export function PortfolioHomePage() {
         <aside className={styles.heroPanel}>
           <span className={styles.panelTag}>Projeto em destaque</span>
 
-          <div className={styles.projectPreview}>
-            <div className={styles.previewShot}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/img/localhost_3001_portfolio_barbearia.png"
-                alt="Home pública do projeto Prime Cut Studio"
+            <div className={styles.projectPreview}>
+              <div className={styles.previewShot}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                src={activeProject.imageSrc}
+                alt={activeProject.imageAlt}
               />
-            </div>
-
-            <div className={styles.previewContent}>
-              <strong>Prime Cut Studio</strong>
-              <p>
-                Home institucional com posicionamento premium, vitrine de serviços, clube de
-                fidelidade, contato e fluxo completo de agendamento no site.
-              </p>
-              <div className={styles.previewPoints}>
-                <span>Home pública com identidade visual própria</span>
-                <span>Seções comerciais, CTA e prova de valor</span>
-                <span>Entrada para agenda, fidelidade e área do cliente</span>
               </div>
-            </div>
+
+              <div className={styles.previewContent}>
+              <strong>{activeProject.title}</strong>
+              <p>{activeProject.description}</p>
+              <div className={styles.previewPoints}>
+                {activeProject.previewPoints.slice(0, 2).map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+              </div>
 
             <div className={styles.stackList}>
               <span>Next.js</span>
               <span>React</span>
               <span>Prisma</span>
-              <span>PostgreSQL</span>
             </div>
           </div>
         </aside>
@@ -190,68 +204,63 @@ export function PortfolioHomePage() {
           </div>
 
           <div className={styles.projectsGrid}>
-            <article className={styles.projectCard}>
-              <div className={styles.projectCopy}>
-                <span className={styles.eyebrow}>{activeProject.eyebrow}</span>
-                <h3>{activeProject.title}</h3>
-                <p>{activeProject.description}</p>
+            <div className={styles.carouselViewport}>
+              <div
+                className={styles.carouselTrack}
+                style={{ transform: `translateX(-${projectPage * 100}%)` }}
+              >
+                {projects.map((project) => (
+                  <article className={styles.projectSlide} key={project.href}>
+                    <div className={styles.projectCard}>
+                      <div className={styles.projectCopy}>
+                        <span className={styles.eyebrow}>{project.eyebrow}</span>
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
 
-                <div className={styles.projectMeta}>
-                  {activeProject.meta.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
+                        <div className={styles.projectMeta}>
+                          {project.meta.map((item) => (
+                            <span key={item}>{item}</span>
+                          ))}
+                        </div>
 
-                <div className={styles.projectLinks}>
-                  <Link
-                    className={styles.cta}
-                    href={activeProject.href}
-                  >
-                    Abrir projeto completo
-                  </Link>
-                </div>
+                        <div className={styles.projectLinks}>
+                          <Link className={styles.cta} href={project.href}>
+                            Abrir projeto completo
+                          </Link>
+                        </div>
+                      </div>
+
+                      <div className={styles.projectMedia}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={project.imageSrc} alt={project.imageAlt} />
+                        <div className={styles.miniPanel}>
+                          <strong>{project.scopeTitle}</strong>
+                          <p className={styles.noteStrong}>{project.scopeDescription}</p>
+                          <div className={styles.previewPoints}>
+                            {project.previewPoints.map((item) => (
+                              <span key={item}>{item}</span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
+            </div>
 
-              <div className={styles.projectMedia}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={activeProject.imageSrc}
-                  alt={activeProject.imageAlt}
+            <div className={styles.carouselDots} role="tablist" aria-label="Projetos do portfólio">
+              {projects.map((project, index) => (
+                <button
+                  aria-label={`Ir para ${project.title}`}
+                  aria-selected={projectPage === index}
+                  className={projectPage === index ? styles.carouselDotActive : styles.carouselDot}
+                  key={project.href}
+                  onClick={() => setProjectPage(index)}
+                  role="tab"
+                  type="button"
                 />
-                <div className={styles.miniPanel}>
-                  <strong>{activeProject.scopeTitle}</strong>
-                  <p className={styles.noteStrong}>{activeProject.scopeDescription}</p>
-                  <div className={styles.previewPoints}>
-                    {activeProject.previewPoints.map((item) => (
-                      <span key={item}>{item}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div className={styles.pagination}>
-              <button
-                className={styles.paginationButton}
-                disabled={projectPage === 0}
-                onClick={() => setProjectPage((current) => Math.max(0, current - 1))}
-                type="button"
-              >
-                Anterior
-              </button>
-              <span className={styles.paginationStatus}>
-                Página {projectPage + 1} de {projects.length}
-              </span>
-              <button
-                className={styles.paginationButton}
-                disabled={projectPage === projects.length - 1}
-                onClick={() =>
-                  setProjectPage((current) => Math.min(projects.length - 1, current + 1))
-                }
-                type="button"
-              >
-                Próxima
-              </button>
+              ))}
             </div>
           </div>
         </section>
