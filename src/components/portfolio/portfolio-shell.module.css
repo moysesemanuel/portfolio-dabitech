@@ -1,0 +1,79 @@
+.page {
+  --ink: #ebf4ff;
+  --muted: rgba(221, 232, 249, 0.7);
+  --navy: #eff6ff;
+  --navy-deep: #081523;
+  --sky: #dceeff;
+  --blue: #67cfff;
+  --gold: #e0ae57;
+  --surface: rgba(10, 18, 32, 0.78);
+  --surface-strong: rgba(15, 26, 43, 0.94);
+  --line: rgba(138, 187, 255, 0.14);
+  --spotlight-x: 50vw;
+  --spotlight-y: 24vh;
+  --spotlight-opacity: 0;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(103, 207, 255, 0.16), transparent 22%),
+    radial-gradient(circle at 90% 14%, rgba(224, 174, 87, 0.1), transparent 18%),
+    linear-gradient(180deg, #060d18 0%, #0b1524 48%, #09111d 100%);
+  color: var(--ink);
+  min-height: 100vh;
+  position: relative;
+}
+
+.pageAura {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(103, 207, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(224, 174, 87, 0.12), transparent 18%);
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+.mouseGlow {
+  background:
+    radial-gradient(
+      420px circle at var(--spotlight-x) var(--spotlight-y),
+      rgba(103, 207, 255, 0.22) 0%,
+      rgba(103, 207, 255, 0.14) 18%,
+      rgba(103, 207, 255, 0.06) 38%,
+      transparent 68%
+    );
+  inset: 0;
+  opacity: var(--spotlight-opacity);
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 180ms ease;
+  z-index: 0;
+}
+
+.main {
+  display: grid;
+  gap: 28px;
+  margin: 0 auto;
+  max-width: min(92vw, 1440px);
+  padding: 122px 0 44px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .mouseGlow {
+    display: none;
+  }
+}
+
+@media (max-width: 920px) {
+  .main {
+    max-width: calc(100vw - 28px);
+    padding-top: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    max-width: calc(100vw - 20px);
+    padding-top: 24px;
+  }
+}

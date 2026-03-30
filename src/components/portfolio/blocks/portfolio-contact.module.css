@@ -1,0 +1,106 @@
+.contactSection,
+.contactSectionEntered {
+  align-items: center;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.22);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  overflow: hidden;
+  padding: 30px;
+  scroll-margin-top: 122px;
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.contactSection {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.contactSectionEntered {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 290ms;
+}
+
+.contactCopy {
+  display: grid;
+  gap: 12px;
+}
+
+.contactCopy h2 {
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  margin: 0;
+  max-width: 15ch;
+}
+
+.contactCopy p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contactPrimaryCta {
+  background: linear-gradient(135deg, var(--blue) 0%, #b7ebff 100%);
+  box-shadow: 0 16px 28px rgba(94, 199, 255, 0.24);
+  color: var(--navy-deep);
+}
+
+.contactSecondaryCta {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(138, 187, 255, 0.14);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .contactSection,
+  .contactSectionEntered {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .contactSection,
+  .contactSectionEntered {
+    grid-template-columns: 1fr;
+  }
+
+  .contactActions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 920px) {
+  .contactSection,
+  .contactSectionEntered {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contactCopy h2 {
+    max-width: none;
+  }
+
+  .contactActions {
+    display: grid;
+    gap: 10px;
+  }
+}

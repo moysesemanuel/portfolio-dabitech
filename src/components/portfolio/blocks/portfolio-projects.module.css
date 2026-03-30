@@ -1,0 +1,261 @@
+.projectsSection,
+.projectsSectionEntered {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.22);
+  display: grid;
+  gap: 26px;
+  overflow: hidden;
+  padding: 30px;
+  scroll-margin-top: 122px;
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.projectsSection {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.projectsSectionEntered {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 220ms;
+}
+
+.carouselShell {
+  display: grid;
+  gap: 18px;
+}
+
+.projectCard {
+  background: linear-gradient(135deg, rgba(8, 23, 40, 0.98) 0%, rgba(6, 17, 31, 0.98) 100%);
+  border-radius: 32px;
+  color: #ffffff;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.12fr);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.projectVisual {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.projectVisual img {
+  aspect-ratio: 16 / 10;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+}
+
+.projectBody {
+  display: grid;
+  gap: 16px;
+}
+
+.projectHeader {
+  display: grid;
+  gap: 10px;
+}
+
+.projectHeaderTop {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.projectBadge {
+  color: rgba(183, 235, 255, 0.86);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.projectNumber {
+  color: rgba(234, 247, 255, 0.6);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.projectHeader h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.06em;
+  line-height: 0.94;
+  margin: 0;
+}
+
+.projectHeader p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.projectMeta,
+.projectActions,
+.carouselControls,
+.carouselDots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.projectPrimaryCta {
+  background: linear-gradient(135deg, var(--blue) 0%, #b7ebff 100%);
+  box-shadow: 0 16px 28px rgba(94, 199, 255, 0.24);
+  color: var(--navy-deep);
+}
+
+.projectMeta span {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: #f2f9ff;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  min-height: 34px;
+  padding: 0 12px;
+}
+
+.scopeCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.scopeCard strong {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.scopeCard p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.carouselFooter {
+  align-items: center;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: auto 1fr;
+}
+
+.carouselControls {
+  justify-content: flex-start;
+}
+
+.carouselButton {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(138, 187, 255, 0.14);
+  border-radius: 999px;
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.carouselDots {
+  justify-content: flex-end;
+}
+
+.carouselDot,
+.carouselDotActive {
+  background: rgba(255, 255, 255, 0.12);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  height: 12px;
+  padding: 0;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    width 180ms ease;
+  width: 12px;
+}
+
+.carouselDotActive {
+  background: linear-gradient(135deg, var(--blue) 0%, rgba(224, 174, 87, 0.95) 100%);
+  width: 42px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .carouselButton:hover,
+  .carouselDot:hover,
+  .carouselDotActive:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .projectsSection,
+  .projectsSectionEntered {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .projectCard {
+    grid-template-columns: 1fr;
+  }
+
+  .carouselFooter {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 920px) {
+  .projectsSection,
+  .projectsSectionEntered {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .projectHeader h3 {
+    font-size: 1.9rem;
+  }
+
+  .projectActions,
+  .carouselControls {
+    display: grid;
+    gap: 10px;
+  }
+
+  .carouselButton {
+    width: 100%;
+  }
+
+  .carouselDots {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,45 @@
+.socialRail {
+  align-items: center;
+  bottom: 0;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  left: 40px;
+  position: fixed;
+  z-index: 10;
+}
+
+.socialRail::after {
+  background: rgba(221, 232, 249, 0.32);
+  content: "";
+  height: 96px;
+  width: 1px;
+}
+
+.socialRailLink {
+  color: rgba(221, 232, 249, 0.82);
+  display: inline-flex;
+  padding: 10px;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    color 180ms ease;
+}
+
+.socialRailLink svg {
+  height: 20px;
+  width: 20px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .socialRailLink:hover {
+    color: var(--blue);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 920px) {
+  .socialRail {
+    display: none;
+  }
+}
