@@ -52,6 +52,7 @@
   color: var(--muted);
   line-height: 1.7;
   margin: 0;
+  max-width: 58ch;
 }
 
 .heroActions,
@@ -59,6 +60,28 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.heroEvidence {
+  display: grid;
+  gap: 10px;
+}
+
+.heroEvidence span {
+  align-items: center;
+  color: rgba(226, 238, 251, 0.8);
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 600;
+  gap: 10px;
+}
+
+.heroEvidence span::before {
+  background: linear-gradient(135deg, var(--blue) 0%, rgba(224, 174, 87, 0.95) 100%);
+  border-radius: 999px;
+  content: "";
+  flex: 0 0 8px;
+  height: 8px;
 }
 
 .heroPrimaryCta,
@@ -182,6 +205,7 @@
   color: var(--muted);
   line-height: 1.7;
   margin: 0;
+  max-width: 44ch;
 }
 
 .featureMeta span {
@@ -235,6 +259,10 @@
   .heroCopy h1 {
     font-size: clamp(2.5rem, 12vw, 4.2rem);
     max-width: none;
+  }
+
+  .heroEvidence span {
+    font-size: 0.88rem;
   }
 
   .heroActions {

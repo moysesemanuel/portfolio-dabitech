@@ -1,5 +1,4 @@
-import Link from "next/link";
-import styles from "./page.module.css";
+import { ProjectCasePage } from "@/components/portfolio/project-case-page";
 
 const modules = [
   "Painel com indicadores operacionais",
@@ -8,7 +7,7 @@ const modules = [
   "Perfil com fluxo lateral e ações de conta",
 ] as const;
 
-const highlights = [
+const features = [
   {
     title: "Produto com estrutura própria",
     description:
@@ -28,66 +27,44 @@ const highlights = [
 
 export default function PortfolioSalesSystemPage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroCopy}>
-          <span className={styles.eyebrow}>Projeto em destaque</span>
-          <h1>Sistema de vendas</h1>
-          <p>
-            Esta página publica a vitrine do produto dentro do portfólio principal. A aplicação
-            completa segue separada como projeto standalone, com banco e regras próprias.
-          </p>
-
-          <div className={styles.actions}>
-            <Link className={styles.primaryCta} href="/">
-              Voltar ao portfólio
-            </Link>
-            <a className={styles.secondaryCta} href="#modulos">
-              Ver módulos
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.previewCard}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt="Preview do sistema de vendas"
-            className={styles.previewImage}
-            src="/img/portfolio-sales-system-preview.svg"
-          />
-        </div>
-      </section>
-
-      <section className={styles.section} id="modulos">
-        <div className={styles.sectionIntro}>
-          <span className={styles.eyebrow}>Módulos</span>
-          <h2>Fluxo comercial organizado para uso real.</h2>
-        </div>
-
-        <div className={styles.moduleGrid}>
-          {modules.map((module) => (
-            <article className={styles.moduleCard} key={module}>
-              <strong>{module}</strong>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={styles.sectionIntro}>
-          <span className={styles.eyebrow}>Estrutura</span>
-          <h2>O que já foi construído nesse projeto.</h2>
-        </div>
-
-        <div className={styles.highlightGrid}>
-          {highlights.map((item) => (
-            <article className={styles.highlightCard} key={item.title}>
-              <strong>{item.title}</strong>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
+    <ProjectCasePage
+      delivery={[
+        {
+          title: "Estrutura comercial publicada com narrativa clara",
+          description:
+            "A landing organiza proposta, benefícios e visão do produto de forma mais convincente para negócio e operação.",
+        },
+        {
+          title: "Base para cadastros, vendas e acompanhamento",
+          description:
+            "O case apresenta um produto preparado para clientes, produtos, estoque, vendas e leitura de indicadores em uma mesma experiência.",
+        },
+        {
+          title: "Produto desenhado para seguir como SaaS",
+          description:
+            "A arquitetura apresentada favorece evolução contínua, desacoplamento e publicação independente da vitrine principal.",
+        },
+        {
+          title: "Posicionamento mais forte para um ERP comercial",
+          description:
+            "A página agora trata o projeto como produto, não só como tela solta, o que melhora percepção de maturidade e valor.",
+        },
+      ]}
+      description="Case de um sistema comercial pensado para unir landing, visão de produto e operação interna em uma estrutura capaz de evoluir como SaaS. O foco aqui é mostrar clareza de proposta, arquitetura de módulos e contexto de negócio."
+      features={features}
+      metrics={[
+        { label: "Modelo", value: "ERP comercial com narrativa de produto" },
+        { label: "Foco", value: "Operação, indicadores e evolução SaaS" },
+        { label: "Entrega", value: "Interface publicada com contexto técnico" },
+      ]}
+      modules={modules}
+      previewAlt="Preview do sistema de vendas"
+      previewCaption="Uma apresentação mais sólida do produto, com visão comercial e estrutura pronta para evoluir além da vitrine."
+      previewHeight={720}
+      previewSrc="/img/portfolio-sales-system-preview.svg"
+      previewWidth={1200}
+      subtitle="Fluxo comercial organizado para uso real."
+      title="Sistema de vendas"
+    />
   );
 }

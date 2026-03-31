@@ -38,6 +38,22 @@ export function PortfolioProjects({
       </div>
 
       <div className={styles.carouselShell}>
+        <div className={styles.projectSelectorRail}>
+          {projects.map((project, index) => (
+            <button
+              className={
+                activeProjectIndex === index ? styles.projectSelectorActive : styles.projectSelector
+              }
+              key={project.href}
+              onClick={() => onSelectProject(index)}
+              type="button"
+            >
+              <span>{project.eyebrow}</span>
+              <strong>{project.title}</strong>
+            </button>
+          ))}
+        </div>
+
         <article className={styles.projectCard}>
           <div className={styles.projectVisual}>
             <Image

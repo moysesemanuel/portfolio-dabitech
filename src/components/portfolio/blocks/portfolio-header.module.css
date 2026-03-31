@@ -146,6 +146,11 @@
     gap: 10px;
   }
 
+  .brand :global(img) {
+    height: 38px;
+    width: 38px;
+  }
+
   .brandCopy strong {
     font-size: 1.28rem;
   }
@@ -174,6 +179,11 @@
 @media (max-width: 640px) {
   .header {
     width: calc(100vw - 20px);
+  }
+
+  .brand :global(img) {
+    height: 34px;
+    width: 34px;
   }
 
   .brandCopy span {

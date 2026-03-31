@@ -20,11 +20,17 @@ export function PortfolioHero({ featuredProject, highlights, isPageReady }: Port
     <section className={isPageReady ? styles.heroEntered : styles.hero}>
       <div className={styles.heroCopy}>
         <span className={sharedStyles.eyebrow}>Portfólio</span>
-        <h1>Sites e sistemas com presença forte, leitura clara e estrutura pronta para operar.</h1>
+        <h1>Sites e sistemas que reforçam presença, organizam operação e sustentam crescimento.</h1>
         <p className={styles.heroLead}>
-          Desenvolvo produtos digitais com foco em valor percebido, consistência visual e base
-          técnica sólida para publicar, manter e evoluir.
+          Desenvolvo produtos digitais para negócios que precisam comunicar melhor, operar com
+          mais clareza e publicar com uma base técnica confiável desde o primeiro lançamento.
         </p>
+
+        <div className={styles.heroEvidence}>
+          <span>Direção visual com leitura comercial forte</span>
+          <span>Fluxos pensados para uso real e continuidade</span>
+          <span>Publicação pronta para produção na Vercel</span>
+        </div>
 
         <div className={styles.heroActions}>
           <Link className={`${sharedStyles.buttonBase} ${styles.heroPrimaryCta}`} href="#projetos">

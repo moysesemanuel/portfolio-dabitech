@@ -4,17 +4,17 @@ export const services = [
   {
     title: "Sites institucionais com direção visual",
     description:
-      "Páginas comerciais com narrativa clara, presença de marca e estrutura preparada para crescimento.",
+      "Páginas comerciais com narrativa clara, presença de marca e estrutura pensada para aumentar percepção de valor e conversão.",
   },
   {
     title: "Sistemas internos e produtos web",
     description:
-      "Painéis administrativos, fluxos operacionais e aplicações web pensadas para uso real, com foco em clareza, manutenção e evolução.",
+      "Painéis administrativos, fluxos operacionais e aplicações web pensadas para uso real, com foco em clareza, manutenção e ganho de organização.",
   },
   {
     title: "Base técnica e continuidade",
     description:
-      "Frontend, backend, banco de dados, autenticação e deploy organizados para garantir estabilidade e evolução contínua.",
+      "Frontend, backend, banco de dados, autenticação e deploy organizados para publicar com segurança e evoluir sem retrabalho.",
   },
 ] as const;
 
@@ -23,7 +23,7 @@ export const projects = [
     eyebrow: "Cliente",
     title: "Plataforma para barbearia premium",
     description:
-      "Projeto com presença institucional forte e operação completa por trás, reunindo agenda, fidelidade, catálogo, carrinho e backoffice integrado.",
+      "Projeto com presença institucional forte e operação completa por trás, reunindo agenda, fidelidade, catálogo, carrinho e backoffice em uma experiência única.",
     meta: ["Agendamento online", "Área do cliente", "Backoffice", "Gestão de estoque"],
     href: "/portfolio/barbearia",
     imageSrc: "/img/localhost_3001_admin_agenda.png",
@@ -38,7 +38,7 @@ export const projects = [
     eyebrow: "Produto",
     title: "Sistema de vendas com landing page comercial",
     description:
-      "Conceito de SaaS com página comercial, funil, indicadores e apresentação pensada para reforçar posicionamento e conversão.",
+      "Conceito de SaaS com página comercial, funil, indicadores e estrutura voltada para reforçar posicionamento, clareza e conversão.",
     meta: ["CRM comercial", "Funil de vendas", "Relatórios", "Landing page"],
     href: "/portfolio/sistema-vendas",
     imageSrc: "/img/portfolio-sales-system-preview.svg",
@@ -53,7 +53,7 @@ export const projects = [
     eyebrow: "Produto",
     title: "Sistema de chamados com operação cliente e técnico",
     description:
-      "Help desk com Kanban, fluxo de atendimento, comentários, status e interfaces separadas para cliente e equipe técnica.",
+      "Help desk com Kanban, fluxo de atendimento, comentários, status e interfaces separadas para cliente e equipe técnica em contexto operacional real.",
     meta: ["Help desk", "Kanban", "Atendimento", "Portal técnico"],
     href: "/portfolio/sistema-chamados",
     imageSrc: "/img/portfolio-support-tickets-preview.svg",

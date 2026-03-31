@@ -1,5 +1,4 @@
-import Link from "next/link";
-import styles from "./page.module.css";
+import { ProjectCasePage } from "@/components/portfolio/project-case-page";
 
 const modules = [
   "Kanban operacional com etapas de atendimento",
@@ -8,7 +7,7 @@ const modules = [
   "Fluxo de status com pausa, resolução e encerramento",
 ] as const;
 
-const highlights = [
+const features = [
   {
     title: "Projeto separado do portfólio principal",
     description:
@@ -28,66 +27,44 @@ const highlights = [
 
 export default function PortfolioSupportTicketsPage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroCopy}>
-          <span className={styles.eyebrow}>Projeto em destaque</span>
-          <h1>Sistema de chamados</h1>
-          <p>
-            Esta vitrine apresenta o produto de suporte técnico dentro do portfólio principal. A
-            aplicação completa segue separada, com seu próprio repositório e fluxo de evolução.
-          </p>
-
-          <div className={styles.actions}>
-            <Link className={styles.primaryCta} href="/">
-              Voltar ao portfólio
-            </Link>
-            <a className={styles.secondaryCta} href="#modulos">
-              Ver módulos
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.previewCard}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt="Preview do sistema de chamados"
-            className={styles.previewImage}
-            src="/img/portfolio-support-tickets-preview.svg"
-          />
-        </div>
-      </section>
-
-      <section className={styles.section} id="modulos">
-        <div className={styles.sectionIntro}>
-          <span className={styles.eyebrow}>Módulos</span>
-          <h2>Atendimento estruturado para cliente e equipe técnica.</h2>
-        </div>
-
-        <div className={styles.moduleGrid}>
-          {modules.map((module) => (
-            <article className={styles.moduleCard} key={module}>
-              <strong>{module}</strong>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={styles.sectionIntro}>
-          <span className={styles.eyebrow}>Estrutura</span>
-          <h2>O que já foi construído nesse projeto.</h2>
-        </div>
-
-        <div className={styles.highlightGrid}>
-          {highlights.map((item) => (
-            <article className={styles.highlightCard} key={item.title}>
-              <strong>{item.title}</strong>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
+    <ProjectCasePage
+      delivery={[
+        {
+          title: "Atendimento visualmente mais fácil de entender",
+          description:
+            "O case deixa mais claro como cliente e equipe técnica percorrem etapas distintas dentro de uma mesma operação de suporte.",
+        },
+        {
+          title: "Fluxo operacional com cara de produto real",
+          description:
+            "Kanban, modal de ticket, histórico e status formam uma narrativa muito mais próxima de um help desk que poderia entrar em produção.",
+        },
+        {
+          title: "Separação clara entre vitrine e aplicação",
+          description:
+            "A página apresenta o valor do sistema como produto, enquanto a aplicação completa pode seguir evoluindo de forma independente.",
+        },
+        {
+          title: "Mais contexto para cada entrega técnica",
+          description:
+            "O case agora mostra não só a interface, mas também o recorte funcional e a lógica operacional que sustentam o produto.",
+        },
+      ]}
+      description="Case de um sistema de chamados com foco em operação cliente-técnico, leitura rápida do fluxo e contexto funcional suficiente para mostrar o produto como solução real de atendimento. A proposta aqui é apresentar valor, não só interface."
+      features={features}
+      metrics={[
+        { label: "Modelo", value: "Help desk com fluxo operacional completo" },
+        { label: "Foco", value: "Cliente, técnico, status e continuidade" },
+        { label: "Entrega", value: "Case com contexto de produto e operação" },
+      ]}
+      modules={modules}
+      previewAlt="Preview do sistema de chamados"
+      previewCaption="Uma vitrine mais sólida para o produto, com foco em rotina operacional e leitura de fluxo em contexto real."
+      previewHeight={900}
+      previewSrc="/img/portfolio-support-tickets-preview.svg"
+      previewWidth={1400}
+      subtitle="Atendimento estruturado para cliente e equipe técnica."
+      title="Sistema de chamados"
+    />
   );
 }

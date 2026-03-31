@@ -32,6 +32,51 @@
   gap: 18px;
 }
 
+.projectSelectorRail {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.projectSelector,
+.projectSelectorActive {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(138, 187, 255, 0.12);
+  border-radius: 22px;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.projectSelector span,
+.projectSelectorActive span {
+  color: rgba(191, 222, 252, 0.6);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.projectSelector strong,
+.projectSelectorActive strong {
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.projectSelectorActive {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(103, 207, 255, 0.08) 100%);
+  border-color: rgba(103, 207, 255, 0.26);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.16);
+}
+
 .projectCard {
   background: linear-gradient(135deg, rgba(8, 23, 40, 0.98) 0%, rgba(6, 17, 31, 0.98) 100%);
   border-radius: 32px;
@@ -207,6 +252,8 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .projectSelector:hover,
+  .projectSelectorActive:hover,
   .carouselButton:hover,
   .carouselDot:hover,
   .carouselDotActive:hover {
@@ -224,6 +271,7 @@
 }
 
 @media (max-width: 1180px) {
+  .projectSelectorRail,
   .projectCard {
     grid-template-columns: 1fr;
   }
@@ -243,6 +291,10 @@
 @media (max-width: 640px) {
   .projectHeader h3 {
     font-size: 1.9rem;
+  }
+
+  .projectSelectorRail {
+    gap: 10px;
   }
 
   .projectActions,
