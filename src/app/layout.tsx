@@ -4,9 +4,9 @@ import { BackToTopButton } from "@/components/shared/back-to-top-button";
 import { ToastProvider } from "@/components/shared/toast-provider";
 
 export const metadata: Metadata = {
-  title: "Prime Cut Studio",
+  title: "DaBi Tech | Digital Solutions",
   description:
-    "Barbearia premium com atendimento por agendamento, serviços de corte e barba e presença digital profissional.",
+    "Portfólio de produtos digitais com foco em direção visual, clareza de interface e base técnica pronta para operar.",
   icons: {
     icon: "/logo-icon.svg",
     shortcut: "/logo-icon.svg",
