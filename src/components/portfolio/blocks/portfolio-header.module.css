@@ -167,17 +167,7 @@
   }
 
   .headerActions {
-    flex-wrap: nowrap;
-    gap: 8px;
-    justify-content: flex-end;
-  }
-
-  .headerPrimaryCta,
-  .headerSecondaryCta {
-    font-size: 0.78rem;
-    min-height: 34px;
-    padding: 0 10px;
-    white-space: nowrap;
+    display: none;
   }
 }
 
