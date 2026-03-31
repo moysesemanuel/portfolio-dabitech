@@ -1,4 +1,4 @@
-export const INSTAGRAM_URL = "https://instagram.com/";
+export const INSTAGRAM_URL = "https://instagram.com/dabitech.ds/";
 
 export const services = [
   {
