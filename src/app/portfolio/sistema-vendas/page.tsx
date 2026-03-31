@@ -10,9 +10,9 @@ const modules = [
 
 const highlights = [
   {
-    title: "Projeto separado da barbearia",
+    title: "Produto com estrutura própria",
     description:
-      "A aplicação foi isolada em `projects/sales-system`, com estrutura própria, Prisma próprio e banco dedicado.",
+      "A aplicação foi desenhada para evoluir como produto independente, com base própria para banco, regras de negócio e deploy.",
   },
   {
     title: "Interface de ERP comercial",
@@ -22,7 +22,7 @@ const highlights = [
   {
     title: "Base pronta para evolução",
     description:
-      "A vitrine publicada apresenta o produto em produção sem depender do `localhost`, enquanto a app standalone segue disponível para evolução local.",
+      "A vitrine publicada apresenta o produto sem depender da aplicação operacional completa, preservando espaço para evolução técnica independente.",
   },
 ] as const;
 

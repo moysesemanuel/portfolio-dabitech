@@ -12,7 +12,7 @@ const highlights = [
   {
     title: "Projeto separado do portfólio principal",
     description:
-      "A aplicação foi criada como projeto standalone em `separated-repos/support-tickets-app`, com backend e estrutura próprios.",
+      "A aplicação foi desenhada como produto independente, com backend próprio e fluxo operacional separado da vitrine principal.",
   },
   {
     title: "Operação inspirada em help desks reais",

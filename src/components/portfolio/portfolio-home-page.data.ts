@@ -47,7 +47,7 @@ export const projects = [
     imageHeight: 720,
     scopeTitle: "Escopo proposto",
     scopeDescription:
-      "Aplicação standalone em `projects/sales-system`, com Prisma próprio, cadastros reais, vendas, estoque e financeiro desacoplados da barbearia.",
+      "Produto com arquitetura própria, pronto para evoluir com banco, cadastros, operação comercial e deploy independentes da vitrine institucional.",
   },
   {
     eyebrow: "Produto",
@@ -62,7 +62,7 @@ export const projects = [
     imageHeight: 900,
     scopeTitle: "Escopo entregue",
     scopeDescription:
-      "Aplicação standalone em `separated-repos/support-tickets-app`, com backend próprio, gestão de tickets, fluxo de resposta e interface operacional inspirada em centrais de atendimento.",
+      "Sistema com backend próprio, gestão de tickets, fluxo de resposta e interface operacional inspirada em centrais de atendimento.",
   },
 ] as const;
 
