@@ -97,11 +97,11 @@ export function PortfolioHomePage() {
 
     const readyTimer = window.setTimeout(() => {
       setIsPageReady(true);
-    }, 120);
+    }, 3200);
 
     const hideLoaderTimer = window.setTimeout(() => {
       setIsLoaderVisible(false);
-    }, 1050);
+    }, 3100);
 
     return () => {
       window.clearTimeout(readyTimer);

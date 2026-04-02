@@ -14,11 +14,11 @@ export function PortfolioContact({ isPageReady }: PortfolioContactProps) {
     >
       <div className={styles.contactCopy}>
         <span className={sharedStyles.eyebrow}>Contato</span>
-        <h2>Vamos tirar sua ideia do papel.</h2>
-        <p>Se fizer sentido para o seu negócio, eu desenvolvo.</p>
+        <h2>Se o seu projeto precisa parecer mais profissional, esse é o momento de conversar.</h2>
+        <p>Atendo negócios que querem vender melhor, transmitir mais confiança e organizar sua operação digital.</p>
         <p>
-          Transformo sua necessidade em um site institucional, sistema interno ou produto web com
-          visual consistente e operação alinhada ao momento do projeto.
+          Se você quer sair de uma presença improvisada para uma solução que realmente valorize o
+          que oferece, me chama e eu estruturo isso com você.
         </p>
       </div>
 
@@ -32,7 +32,7 @@ export function PortfolioContact({ isPageReady }: PortfolioContactProps) {
           rel="noreferrer"
           target="_blank"
         >
-          Orçamento no WhatsApp
+          Pedir orçamento no WhatsApp
         </Link>
       </div>
     </section>

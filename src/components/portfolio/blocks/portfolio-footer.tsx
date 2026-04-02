@@ -9,7 +9,7 @@ export function PortfolioFooter({ isPageReady }: PortfolioFooterProps) {
     <footer className={isPageReady ? styles.footerEntered : styles.footer}>
       <div className={styles.footerBrand}>
         <span>DaBi Tech - Digital Solutions</span>
-        <span>Produtos digitais com posicionamento, clareza e execução.</span>
+        <span>Projetos digitais para marcas que precisam parecer maiores, mais fortes e mais profissionais.</span>
       </div>
     </footer>
   );

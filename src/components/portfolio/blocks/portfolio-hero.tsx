@@ -20,24 +20,25 @@ export function PortfolioHero({ featuredProject, highlights, isPageReady }: Port
     <section className={isPageReady ? styles.heroEntered : styles.hero}>
       <div className={styles.heroCopy}>
         <span className={sharedStyles.eyebrow}>Portfólio</span>
-        <h1>Sites e sistemas que reforçam presença, organizam operação e sustentam crescimento.</h1>
+        <h1>Projetos digitais que fazem sua marca parecer maior, mais confiável e mais pronta para vender.</h1>
         <p className={styles.heroLead}>
-          Desenvolvo produtos digitais para negócios que precisam comunicar melhor, operar com
-          mais clareza e publicar com uma base técnica confiável desde o primeiro lançamento.
+          Se o seu negócio precisa de uma presença mais forte, uma operação mais organizada ou um
+          produto com cara de solução séria, eu transformo isso em um projeto digital com direção,
+          clareza e valor percebido.
         </p>
 
         <div className={styles.heroEvidence}>
-          <span>Direção visual com leitura comercial forte</span>
-          <span>Fluxos pensados para uso real e continuidade</span>
-          <span>Publicação pronta para produção na Vercel</span>
+          <span>Mais confiança na apresentação da sua marca</span>
+          <span>Mais clareza para o cliente entender o que você oferece</span>
+          <span>Mais organização para o negócio crescer sem bagunça</span>
         </div>
 
         <div className={styles.heroActions}>
           <Link className={`${sharedStyles.buttonBase} ${styles.heroPrimaryCta}`} href="#projetos">
-            Explorar portfólio
+            Ver projetos
           </Link>
           <a className={`${sharedStyles.buttonBase} ${styles.heroSecondaryCta}`} href="#contato">
-            Falar comigo
+            Solicitar um projeto
           </a>
         </div>
 
@@ -80,7 +81,7 @@ export function PortfolioHero({ featuredProject, highlights, isPageReady }: Port
         </div>
 
         <Link className={`${sharedStyles.buttonBase} ${styles.featurePrimaryCta}`} href={featuredProject.href}>
-          Abrir projeto
+          Ver case
         </Link>
       </aside>
     </section>

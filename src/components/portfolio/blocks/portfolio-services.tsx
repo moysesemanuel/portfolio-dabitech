@@ -19,10 +19,10 @@ export function PortfolioServices({ isPageReady, services }: PortfolioServicesPr
     >
       <div className={sharedStyles.sectionHeading}>
         <span className={sharedStyles.eyebrow}>Serviços</span>
-        <h2>Direção visual, interface e operação tratadas como um único produto.</h2>
+        <h2>Não é só sobre ter um site bonito. É sobre fazer o negócio parecer mais pronto.</h2>
         <p>
-          Não se trata apenas de estética. É sobre construir um sistema digital que comunica bem,
-          funciona corretamente e continua sustentável após o lançamento.
+          Cada projeto é pensado para melhorar como sua marca é percebida, como sua operação
+          funciona e como o cliente se sente ao entrar em contato com você.
         </p>
       </div>
 

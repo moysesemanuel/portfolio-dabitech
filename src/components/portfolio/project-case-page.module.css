@@ -35,12 +35,31 @@
   gap: 24px;
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.92fr);
   padding: 28px;
+  position: relative;
 }
 
 .heroCopy {
   display: grid;
   align-content: center;
   gap: 20px;
+}
+
+.backButton {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: var(--case-ink);
+  display: inline-flex;
+  font-size: 1.35rem;
+  font-weight: 800;
+  height: 48px;
+  justify-content: center;
+  left: 28px;
+  position: absolute;
+  text-decoration: none;
+  top: 28px;
+  width: 48px;
 }
 
 .eyebrow {
@@ -87,12 +106,6 @@
   min-height: 48px;
   padding: 0 18px;
   text-decoration: none;
-}
-
-.primaryCta {
-  background: linear-gradient(135deg, #67cfff 0%, #b7ebff 100%);
-  box-shadow: 0 16px 30px rgba(103, 207, 255, 0.24);
-  color: #06101b;
 }
 
 .secondaryCta {
@@ -239,6 +252,11 @@
   .section {
     border-radius: 28px;
     padding: 20px;
+  }
+
+  .backButton {
+    left: 20px;
+    top: 20px;
   }
 
   .actions {

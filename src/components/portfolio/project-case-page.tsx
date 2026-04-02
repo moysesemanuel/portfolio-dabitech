@@ -15,6 +15,7 @@ type CaseItem = {
 type ProjectCasePageProps = {
   delivery: readonly CaseItem[];
   description: string;
+  externalLinks?: readonly CaseItemLink[];
   features: readonly CaseItem[];
   metrics: readonly CaseMetric[];
   modules: readonly string[];
@@ -27,9 +28,15 @@ type ProjectCasePageProps = {
   title: string;
 };
 
+type CaseItemLink = {
+  href: string;
+  label: string;
+};
+
 export function ProjectCasePage({
   delivery,
   description,
+  externalLinks = [],
   features,
   metrics,
   modules,
@@ -45,15 +52,27 @@ export function ProjectCasePage({
     <main className={styles.page}>
       <div className={styles.pageInner}>
         <section className={styles.hero}>
+          <Link aria-label="Voltar ao portfólio" className={styles.backButton} href="/">
+            <span aria-hidden="true">&lt;</span>
+          </Link>
+
           <div className={styles.heroCopy}>
             <span className={styles.eyebrow}>Case publicado</span>
             <h1>{title}</h1>
             <p>{description}</p>
 
             <div className={styles.actions}>
-              <Link className={styles.primaryCta} href="/">
-                Voltar ao portfólio
-              </Link>
+              {externalLinks.map((link) => (
+                <Link
+                  className={styles.secondaryCta}
+                  href={link.href}
+                  key={link.href}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {link.label}
+                </Link>
+              ))}
               <a className={styles.secondaryCta} href="#modulos">
                 Ver arquitetura do case
               </a>

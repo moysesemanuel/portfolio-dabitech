@@ -11,27 +11,100 @@
   z-index: 40;
 }
 
+.loaderStage {
+  align-items: center;
+  display: grid;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 32px;
+  position: relative;
+  width: min(100vw, 1200px);
+}
+
+.scanFrame {
+  inset: 50% auto auto 50%;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.scanRing,
+.scanGlow {
+  border-radius: 999px;
+  inset: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.scanRing {
+  animation: scanRingPulse 1700ms ease-out forwards;
+  border: 1px solid rgba(119, 214, 255, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(119, 214, 255, 0.08),
+    0 0 36px rgba(119, 214, 255, 0.16);
+  height: 132px;
+  width: 132px;
+}
+
+.scanGlow {
+  animation: scanGlowSweep 1700ms ease-out forwards;
+  background:
+    radial-gradient(circle, rgba(103, 207, 255, 0.3) 0%, rgba(103, 207, 255, 0.08) 42%, transparent 72%);
+  filter: blur(6px);
+  height: 220px;
+  width: 220px;
+}
+
 .loaderMark {
   align-items: center;
-  color: #ffffff;
   display: grid;
-  gap: 14px;
   justify-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logoWrap {
+  animation: logoDock 2700ms cubic-bezier(0.2, 0.8, 0.16, 1) forwards;
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.32));
+  opacity: 0;
+  transform: translateY(24px) scale(0.92);
+  width: min(72vw, 500px);
 }
 
 .loaderLogo {
-  animation: loaderPulse 720ms ease-in-out infinite alternate;
-  background: center / contain no-repeat url("/logo-icon.svg");
   display: block;
-  height: 72px;
-  width: 72px;
+  height: auto;
+  overflow: visible;
+  width: 100%;
 }
 
-.loaderMark span {
-  font-size: 0.92rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.loaderLogo :global(path),
+.loaderLogo :global(rect),
+.loaderLogo :global(text) {
+  animation:
+    logoReveal 880ms ease-out forwards,
+    logoFloat 2200ms ease-in-out 1240ms infinite alternate;
+  opacity: 0;
+}
+
+.loaderLogo :global(rect) {
+  animation-delay: 1020ms, 1180ms;
+}
+
+.loaderLogo :global(path):first-of-type {
+  animation-delay: 1120ms, 1240ms;
+}
+
+.loaderLogo :global(path):last-of-type {
+  animation-delay: 1200ms, 1320ms;
+}
+
+.loaderLogo :global(text:first-of-type) {
+  animation-delay: 1320ms, 1420ms;
+}
+
+.loaderLogo :global(text:last-of-type) {
+  animation-delay: 1420ms, 1520ms;
 }
 
 @media (prefers-reduced-motion: reduce), (pointer: coarse) {
@@ -40,14 +113,93 @@
   }
 }
 
-@keyframes loaderPulse {
-  from {
+@media (max-width: 720px) {
+  .loaderStage {
+    width: 100vw;
+  }
+}
+
+@keyframes scanRingPulse {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.56);
+  }
+
+  24% {
+    opacity: 0.86;
+  }
+
+  72% {
+    opacity: 0.44;
+    transform: translate(-50%, -50%) scale(2.25);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.7);
+  }
+}
+
+@keyframes scanGlowSweep {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+
+  30% {
     opacity: 0.72;
-    transform: scale(0.96);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.15);
+  }
+}
+
+@keyframes logoDock {
+  0% {
+    filter: blur(10px) drop-shadow(0 14px 34px rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transform: translateY(20px) scale(0.88);
+  }
+
+  48% {
+    filter: blur(10px) drop-shadow(0 14px 34px rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transform: translateY(20px) scale(0.88);
+  }
+
+  68% {
+    filter: blur(0) drop-shadow(0 24px 60px rgba(0, 0, 0, 0.32));
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    filter: blur(0) drop-shadow(0 24px 60px rgba(0, 0, 0, 0.32));
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logoReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
 
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoFloat {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-2px);
   }
 }

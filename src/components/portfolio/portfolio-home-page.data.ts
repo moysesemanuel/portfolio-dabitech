@@ -2,19 +2,19 @@ export const INSTAGRAM_URL = "https://instagram.com/dabitech.ds/";
 
 export const services = [
   {
-    title: "Sites institucionais com direção visual",
+    title: "Sites que passam mais confiança e vendem melhor",
     description:
-      "Páginas comerciais com narrativa clara, presença de marca e estrutura pensada para aumentar percepção de valor e conversão.",
+      "Páginas pensadas para elevar a percepção da sua marca, apresentar seu serviço com clareza e gerar conversas mais qualificadas com potenciais clientes.",
   },
   {
-    title: "Sistemas internos e produtos web",
+    title: "Sistemas que reduzem improviso no dia a dia",
     description:
-      "Painéis administrativos, fluxos operacionais e aplicações web pensadas para uso real, com foco em clareza, manutenção e ganho de organização.",
+      "Estruturo ferramentas que organizam atendimento, operação e processos internos para que o negócio ganhe mais controle, agilidade e consistência.",
   },
   {
-    title: "Base técnica e continuidade",
+    title: "Projetos pensados para crescer com o negócio",
     description:
-      "Frontend, backend, banco de dados, autenticação e deploy organizados para publicar com segurança e evoluir sem retrabalho.",
+      "A entrega não termina na interface. O projeto já nasce com uma base sólida para publicar, evoluir e evitar retrabalho quando a operação começar a exigir mais.",
   },
 ] as const;
 
@@ -23,53 +23,68 @@ export const projects = [
     eyebrow: "Cliente",
     title: "Plataforma para barbearia premium",
     description:
-      "Projeto com presença institucional forte e operação completa por trás, reunindo agenda, fidelidade, catálogo, carrinho e backoffice em uma experiência única.",
+      "Uma presença digital mais forte para atrair clientes e uma operação mais organizada para sustentar o crescimento do negócio sem depender de improviso.",
     meta: ["Agendamento online", "Área do cliente", "Backoffice", "Gestão de estoque"],
     href: "/portfolio/barbearia",
     imageSrc: "/img/localhost_3001_admin_agenda.png",
     imageAlt: "Tela do painel administrativo da barbearia",
     imageWidth: 3456,
     imageHeight: 11084,
-    scopeTitle: "Escopo entregue",
+    scopeTitle: "Valor para o negócio",
     scopeDescription:
-      "Interface pública, persistência em banco, autenticação, agenda, fidelidade, catálogo de produtos, estoque e rotina administrativa conectada à operação do negócio.",
+      "O projeto fortalece a imagem da barbearia, facilita o agendamento, melhora a experiência do cliente e dá mais controle sobre a operação diária.",
+  },
+  {
+    eyebrow: "Produto",
+    title: "Lana Baby Lab",
+    description:
+      "Um produto editorial com identidade própria, feito para transmitir cuidado, confiança e abrir espaço para crescimento de audiência e autoridade digital.",
+    meta: ["Receitas por idade", "Studio privado", "Autenticação", "Node.js"],
+    href: "/portfolio/lana-baby-lab",
+    imageSrc: "/img/portfolio-lana-baby-lab-preview.svg",
+    imageAlt: "Preview do projeto Lana Baby Lab",
+    imageWidth: 1400,
+    imageHeight: 900,
+    scopeTitle: "Valor para o negócio",
+    scopeDescription:
+      "A entrega cria uma presença digital mais profissional, facilita a publicação de conteúdo e transforma um tema nichado em uma experiência com mais valor percebido.",
   },
   {
     eyebrow: "Produto",
     title: "Sistema de vendas com landing page comercial",
     description:
-      "Conceito de SaaS com página comercial, funil, indicadores e estrutura voltada para reforçar posicionamento, clareza e conversão.",
+      "Uma proposta de produto com apresentação mais madura, capaz de comunicar valor com clareza e passar mais segurança para quem está avaliando contratar ou testar.",
     meta: ["CRM comercial", "Funil de vendas", "Relatórios", "Landing page"],
     href: "/portfolio/sistema-vendas",
     imageSrc: "/img/portfolio-sales-system-preview.svg",
     imageAlt: "Preview da landing page do sistema de vendas",
     imageWidth: 1200,
     imageHeight: 720,
-    scopeTitle: "Escopo proposto",
+    scopeTitle: "Valor para o negócio",
     scopeDescription:
-      "Produto com arquitetura própria, pronto para evoluir com banco, cadastros, operação comercial e deploy independentes da vitrine institucional.",
+      "O case mostra como um produto pode ganhar cara de solução real, com posicionamento mais forte e uma apresentação muito mais convincente para o mercado.",
   },
   {
     eyebrow: "Produto",
     title: "Sistema de chamados com operação cliente e técnico",
     description:
-      "Help desk com Kanban, fluxo de atendimento, comentários, status e interfaces separadas para cliente e equipe técnica em contexto operacional real.",
+      "Um sistema pensado para tornar o atendimento mais claro, profissional e confiável, tanto para quem solicita suporte quanto para quem precisa operar a rotina.",
     meta: ["Help desk", "Kanban", "Atendimento", "Portal técnico"],
     href: "/portfolio/sistema-chamados",
     imageSrc: "/img/portfolio-support-tickets-preview.svg",
     imageAlt: "Preview do sistema de chamados",
     imageWidth: 1400,
     imageHeight: 900,
-    scopeTitle: "Escopo entregue",
+    scopeTitle: "Valor para o negócio",
     scopeDescription:
-      "Sistema com backend próprio, gestão de tickets, fluxo de resposta e interface operacional inspirada em centrais de atendimento.",
+      "A proposta melhora a percepção de organização, acelera o fluxo de atendimento e cria uma experiência mais sólida para cliente e equipe.",
   },
 ] as const;
 
 export const highlights = [
-  { label: "Entrega", value: "Web + sistema" },
-  { label: "Base", value: "Full Stack" },
-  { label: "Deploy", value: "Pronto para produção (Vercel-ready)" },
+  { label: "Foco", value: "Projetos que vendem e organizam" },
+  { label: "Entrega", value: "Sites, sistemas e produtos web" },
+  { label: "Objetivo", value: "Mais valor percebido e mais clareza" },
 ] as const;
 
 export type PortfolioProject = (typeof projects)[number];
