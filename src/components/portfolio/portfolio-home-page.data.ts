@@ -65,6 +65,21 @@ export const projects = [
       "O case mostra como um produto pode ganhar cara de solução real, com posicionamento mais forte e uma apresentação muito mais convincente para o mercado.",
   },
   {
+    eyebrow: "Infraestrutura",
+    title: "Central de autenticação para múltiplos sistemas",
+    description:
+      "Um núcleo de login pensado para concentrar autenticação, sessão e autorização em uma base reutilizável para ERP, help desk e futuros produtos conectados.",
+    meta: ["Login central", "Cookie HTTP-only", "Prisma", "SSO-ready"],
+    href: "/portfolio/central-autenticacao",
+    imageSrc: "/img/portfolio-auth-system-preview.svg",
+    imageAlt: "Preview da central de autenticação",
+    imageWidth: 1400,
+    imageHeight: 900,
+    scopeTitle: "Valor para o negócio",
+    scopeDescription:
+      "A proposta reduz repetição entre produtos, cria uma base mais segura para acesso e prepara o ecossistema para crescer com autenticação mais consistente.",
+  },
+  {
     eyebrow: "Produto",
     title: "Sistema de chamados com operação cliente e técnico",
     description:
