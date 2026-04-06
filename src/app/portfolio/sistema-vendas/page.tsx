@@ -64,11 +64,11 @@ export default function PortfolioSalesSystemPage() {
         { label: "Entrega", value: "Interface publicada com contexto técnico" },
       ]}
       modules={modules}
-      previewAlt="Preview do sistema de vendas"
-      previewCaption="Uma apresentação mais sólida do produto, com visão comercial e estrutura pronta para evoluir além da vitrine."
-      previewHeight={720}
-      previewSrc="/img/portfolio-sales-system-preview.svg"
-      previewWidth={1200}
+      previewAlt="Dashboard do sistema de vendas"
+      previewCaption="Uma visão real do painel comercial, com estrutura de módulos, atalhos operacionais e leitura rápida dos dados do sistema."
+      previewHeight={1928}
+      previewSrc="/img/portfolio-sales-system-real-preview.png"
+      previewWidth={3456}
       subtitle="Fluxo comercial organizado para uso real."
       title="Sistema de vendas"
     />

@@ -64,11 +64,11 @@ export default function PortfolioAuthCentralPage() {
         { label: "Entrega", value: "Node.js, Express, Prisma e PostgreSQL" },
       ]}
       modules={modules}
-      previewAlt="Preview da central de autenticação"
-      previewCaption="Uma base única para login, sessão e direcionamento entre produtos, com estrutura preparada para crescer junto do ecossistema."
-      previewHeight={900}
-      previewSrc="/img/portfolio-auth-system-preview.svg"
-      previewWidth={1400}
+      previewAlt="Tela da central de autenticação"
+      previewCaption="A interface real da central de autenticação, com seleção de aplicação, acesso à conta e fluxo preparado para múltiplos produtos conectados."
+      previewHeight={1750}
+      previewSrc="/img/portfolio-auth-system-real-preview.png"
+      previewWidth={3454}
       subtitle="Autenticação organizada como núcleo compartilhado entre sistemas."
       title="Central de autenticação"
     />
