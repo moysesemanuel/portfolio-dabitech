@@ -51,6 +51,12 @@ export default function PortfolioSupportTicketsPage() {
         },
       ]}
       description="Case de um sistema de chamados com foco em operação cliente-técnico, leitura rápida do fluxo e contexto funcional suficiente para mostrar o produto como solução real de atendimento. A proposta aqui é apresentar valor, não só interface."
+      externalLinks={[
+        {
+          href: "https://support-tickets-app-nine.vercel.app",
+          label: "Ver projeto online",
+        },
+      ]}
       features={features}
       metrics={[
         { label: "Modelo", value: "Help desk com fluxo operacional completo" },

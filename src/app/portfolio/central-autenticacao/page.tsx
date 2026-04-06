@@ -51,6 +51,12 @@ export default function PortfolioAuthCentralPage() {
         },
       ]}
       description="Case de uma central de autenticação pensada para múltiplos sistemas, com login, cadastro, sessão persistida, proteção de rotas e base preparada para handoff entre aplicações. O foco aqui é mostrar autenticação como infraestrutura de produto, não só como tela de acesso."
+      externalLinks={[
+        {
+          href: "https://login-system-ivory-seven.vercel.app",
+          label: "Ver projeto online",
+        },
+      ]}
       features={features}
       metrics={[
         { label: "Modelo", value: "Auth central para ERP e help desk" },

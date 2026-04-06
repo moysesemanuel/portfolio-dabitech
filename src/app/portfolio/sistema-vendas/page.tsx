@@ -51,6 +51,12 @@ export default function PortfolioSalesSystemPage() {
         },
       ]}
       description="Case de um sistema comercial pensado para unir landing, visão de produto e operação interna em uma estrutura capaz de evoluir como SaaS. O foco aqui é mostrar clareza de proposta, arquitetura de módulos e contexto de negócio."
+      externalLinks={[
+        {
+          href: "https://sales-system-hazel.vercel.app",
+          label: "Ver projeto online",
+        },
+      ]}
       features={features}
       metrics={[
         { label: "Modelo", value: "ERP comercial com narrativa de produto" },
