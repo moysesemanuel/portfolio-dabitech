@@ -19,18 +19,23 @@ export function PortfolioHero({ featuredProject, highlights, isPageReady }: Port
   return (
     <section className={isPageReady ? styles.heroEntered : styles.hero}>
       <div className={styles.heroCopy}>
-        <span className={sharedStyles.eyebrow}>Portfólio</span>
-        <h1>Projetos digitais que fazem sua marca parecer maior, mais confiável e mais pronta para vender.</h1>
+        <span className={sharedStyles.eyebrow}>Portfólio de produto digital</span>
+        <div className={styles.heroSignalBar}>
+          <span>Design com cara de produto real</span>
+          <span>Interface publicada</span>
+          <span>Base pronta para evoluir</span>
+        </div>
+        <h1>Interfaces e páginas com o mesmo peso visual de uma landing de produto premium.</h1>
         <p className={styles.heroLead}>
-          Se o seu negócio precisa de uma presença mais forte, uma operação mais organizada ou um
-          produto com cara de solução séria, eu transformo isso em um projeto digital com direção,
-          clareza e valor percebido.
+          Eu desenho e implemento experiências web para negócios que precisam parecer mais
+          organizados, mais sérios e mais valiosos, sem cair em layout genérico ou apresentação
+          improvisada.
         </p>
 
         <div className={styles.heroEvidence}>
-          <span>Mais confiança na apresentação da sua marca</span>
-          <span>Mais clareza para o cliente entender o que você oferece</span>
-          <span>Mais organização para o negócio crescer sem bagunça</span>
+          <span>Narrativa visual clara para vender melhor</span>
+          <span>Blocos com hierarquia, contraste e ritmo de leitura</span>
+          <span>Execução técnica suficiente para virar produto de verdade</span>
         </div>
 
         <div className={styles.heroActions}>
@@ -72,6 +77,17 @@ export function PortfolioHero({ featuredProject, highlights, isPageReady }: Port
           <span className={styles.featureEyebrow}>{featuredProject.eyebrow}</span>
           <h2>{featuredProject.title}</h2>
           <p>{featuredProject.description}</p>
+        </div>
+
+        <div className={styles.featureSpecGrid}>
+          <article>
+            <span>Abordagem</span>
+            <strong>Interface comercial + operação real</strong>
+          </article>
+          <article>
+            <span>Foco</span>
+            <strong>Valor percebido, clareza e confiança</strong>
+          </article>
         </div>
 
         <div className={styles.featureMeta}>

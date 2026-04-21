@@ -6,7 +6,9 @@ import { PortfolioFooter } from "./blocks/portfolio-footer";
 import { PortfolioHeader } from "./blocks/portfolio-header";
 import { PortfolioHero } from "./blocks/portfolio-hero";
 import { PortfolioLoader } from "./blocks/portfolio-loader";
+import { PortfolioMarquee } from "./blocks/portfolio-marquee";
 import { PortfolioProjects } from "./blocks/portfolio-projects";
+import { PortfolioScrollStory } from "./blocks/portfolio-scroll-story";
 import { PortfolioServices } from "./blocks/portfolio-services";
 import { PortfolioSocialRail } from "./blocks/portfolio-social-rail";
 import { highlights, projects, services } from "./portfolio-home-page.data";
@@ -14,11 +16,15 @@ import styles from "./portfolio-shell.module.css";
 
 export function PortfolioHomePage() {
   const pageRef = useRef<HTMLDivElement | null>(null);
+  const lightStoryRef = useRef<HTMLElement | null>(null);
+  const darkStoryRef = useRef<HTMLElement | null>(null);
   const [activeSection, setActiveSection] = useState("#servicos");
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [hasHydrated, setHasHydrated] = useState(false);
   const [isLoaderVisible, setIsLoaderVisible] = useState(true);
   const [isPageReady, setIsPageReady] = useState(false);
+  const [lightStoryProgress, setLightStoryProgress] = useState(0);
+  const [darkStoryProgress, setDarkStoryProgress] = useState(0);
   const featuredProject = projects[0];
   const activeProject = projects[activeProjectIndex];
 
@@ -146,6 +152,59 @@ export function PortfolioHomePage() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!hasHydrated) {
+      return;
+    }
+
+    const sections = [
+      { ref: lightStoryRef, setter: setLightStoryProgress },
+      { ref: darkStoryRef, setter: setDarkStoryProgress },
+    ] as const;
+
+    let rafId = 0;
+
+    const updateProgress = () => {
+      sections.forEach(({ ref, setter }) => {
+        const element = ref.current;
+
+        if (!element) {
+          setter(0);
+          return;
+        }
+
+        const rect = element.getBoundingClientRect();
+        const totalScrollable = Math.max(1, rect.height - window.innerHeight);
+        const scrolled = Math.min(totalScrollable, Math.max(0, -rect.top));
+        setter(scrolled / totalScrollable);
+      });
+    };
+
+    const handleScroll = () => {
+      if (rafId) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(() => {
+        updateProgress();
+        rafId = 0;
+      });
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+      }
+
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [hasHydrated]);
+
   const handleNavClick = (hash: "#servicos" | "#projetos" | "#contato") => {
     setActiveSection(hash);
   };
@@ -176,6 +235,10 @@ export function PortfolioHomePage() {
 
       <main className={styles.main}>
         <PortfolioHero featuredProject={featuredProject} highlights={highlights} isPageReady={isPageReady} />
+        <section className={styles.fullBleedWrap} ref={lightStoryRef}>
+          <PortfolioScrollStory mode="light" progress={lightStoryProgress} />
+        </section>
+        <PortfolioMarquee projects={projects} />
         <PortfolioServices isPageReady={isPageReady} services={services} />
         <PortfolioProjects
           activeProject={activeProject}
@@ -186,6 +249,9 @@ export function PortfolioHomePage() {
           onSelectProject={setActiveProjectIndex}
           projects={projects}
         />
+        <section className={styles.fullBleedWrap} ref={darkStoryRef}>
+          <PortfolioScrollStory mode="dark" progress={darkStoryProgress} />
+        </section>
         <PortfolioContact isPageReady={isPageReady} />
         <PortfolioFooter isPageReady={isPageReady} />
       </main>

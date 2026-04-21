@@ -1,0 +1,129 @@
+.marqueeSection {
+  display: grid;
+  gap: 18px;
+  margin-top: -8px;
+  padding: 0;
+}
+
+.marqueeIntro {
+  display: grid;
+  gap: 8px;
+  padding: 0 2px;
+}
+
+.marqueeIntro span {
+  color: rgba(221, 232, 249, 0.58);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.marqueeIntro p {
+  color: var(--muted);
+  margin: 0;
+  max-width: 52ch;
+}
+
+.marqueeViewport {
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  overflow: hidden;
+}
+
+.marqueeTrack {
+  animation: marqueeDrift 42s linear infinite;
+  display: flex;
+  gap: 18px;
+  width: max-content;
+}
+
+.marqueeCard {
+  display: grid;
+  gap: 10px;
+  width: min(28vw, 360px);
+}
+
+.marqueeImageWrap {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(138, 187, 255, 0.16);
+  border-radius: 28px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeImage {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.18);
+  width: 100%;
+}
+
+.focus1 .marqueeImage {
+  object-position: left top;
+}
+
+.focus2 .marqueeImage {
+  object-position: center 18%;
+}
+
+.focus3 .marqueeImage {
+  object-position: center center;
+}
+
+.focus4 .marqueeImage {
+  object-position: center 72%;
+}
+
+.focus5 .marqueeImage {
+  object-position: right center;
+}
+
+.marqueeMeta {
+  display: grid;
+  gap: 6px;
+  padding: 0 6px;
+}
+
+.marqueeMeta span {
+  color: rgba(191, 222, 252, 0.58);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.marqueeMeta strong {
+  color: var(--ink);
+  font-size: 0.98rem;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack {
+    animation: none;
+  }
+}
+
+@media (max-width: 920px) {
+  .marqueeCard {
+    width: min(70vw, 320px);
+  }
+
+  .marqueeImageWrap {
+    height: 220px;
+  }
+}
+
+@keyframes marqueeDrift {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
+}

@@ -2,19 +2,19 @@ export const INSTAGRAM_URL = "https://instagram.com/dabitech.ds/";
 
 export const services = [
   {
-    title: "Sites que passam mais confiança e vendem melhor",
+    title: "Landing pages com presença de produto premium",
     description:
-      "Páginas pensadas para elevar a percepção da sua marca, apresentar seu serviço com clareza e gerar conversas mais qualificadas com potenciais clientes.",
+      "Páginas com hierarquia forte, narrativa comercial clara e direção visual mais madura para aumentar valor percebido logo no primeiro scroll.",
   },
   {
-    title: "Sistemas que reduzem improviso no dia a dia",
+    title: "Sistemas que transformam operação em experiência",
     description:
-      "Estruturo ferramentas que organizam atendimento, operação e processos internos para que o negócio ganhe mais controle, agilidade e consistência.",
+      "Interfaces operacionais que deixam fluxos mais legíveis, menos improvisados e mais confiáveis para equipe, cliente e gestão.",
   },
   {
-    title: "Projetos pensados para crescer com o negócio",
+    title: "Base técnica pronta para publicar e evoluir",
     description:
-      "A entrega não termina na interface. O projeto já nasce com uma base sólida para publicar, evoluir e evitar retrabalho quando a operação começar a exigir mais.",
+      "O visual vem junto de uma estrutura que já nasce preparada para deploy, crescimento incremental e menos retrabalho conforme o produto amadurece.",
   },
 ] as const;
 
@@ -97,9 +97,9 @@ export const projects = [
 ] as const;
 
 export const highlights = [
-  { label: "Foco", value: "Projetos que vendem e organizam" },
-  { label: "Entrega", value: "Sites, sistemas e produtos web" },
-  { label: "Objetivo", value: "Mais valor percebido e mais clareza" },
+  { label: "Direção", value: "Produto, interface e narrativa" },
+  { label: "Entrega", value: "Sites, sistemas e experiências web" },
+  { label: "Resultado", value: "Mais autoridade visual e clareza comercial" },
 ] as const;
 
 export type PortfolioProject = (typeof projects)[number];

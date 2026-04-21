@@ -2,15 +2,17 @@
 .heroEntered {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  background: var(--surface);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.015) 100%),
+    var(--surface);
   border: 1px solid var(--line);
-  border-radius: 36px;
-  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.22);
+  border-radius: 40px;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.3);
   display: grid;
-  gap: 24px;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+  gap: 26px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
   overflow: hidden;
-  padding: 30px;
+  padding: 32px;
   scroll-margin-top: 122px;
   transition:
     opacity 520ms ease,
@@ -36,23 +38,46 @@
 
 .heroCopy {
   align-content: center;
-  gap: 24px;
+  gap: 22px;
 }
 
 .heroCopy h1 {
   color: var(--navy);
-  font-size: clamp(3.2rem, 6vw, 6.4rem);
-  letter-spacing: -0.08em;
+  font-size: clamp(3.6rem, 7vw, 7.4rem);
+  letter-spacing: -0.05em;
   line-height: 0.88;
   margin: 0;
-  max-width: 10ch;
+  max-width: 14ch;
+  overflow-wrap: normal;
+  text-wrap: balance;
+  word-break: normal;
 }
 
 .heroLead {
   color: var(--muted);
-  line-height: 1.7;
+  font-size: 1.04rem;
+  line-height: 1.8;
   margin: 0;
-  max-width: 58ch;
+  max-width: 60ch;
+}
+
+.heroSignalBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.heroSignalBar span {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.8);
+  display: inline-flex;
+  font-size: 0.76rem;
+  font-weight: 700;
+  min-height: 34px;
+  padding: 0 14px;
 }
 
 .heroActions,
@@ -69,7 +94,7 @@
 
 .heroEvidence span {
   align-items: center;
-  color: rgba(226, 238, 251, 0.8);
+  color: rgba(238, 242, 247, 0.78);
   display: inline-flex;
   font-size: 0.95rem;
   font-weight: 600;
@@ -87,12 +112,12 @@
 .heroPrimaryCta,
 .featurePrimaryCta {
   background: linear-gradient(135deg, var(--blue) 0%, #b7ebff 100%);
-  box-shadow: 0 16px 28px rgba(94, 199, 255, 0.24);
+  box-shadow: 0 18px 34px rgba(94, 199, 255, 0.24);
   color: var(--navy-deep);
 }
 
 .heroSecondaryCta {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: #ffffff;
 }
@@ -104,37 +129,40 @@
 }
 
 .highlightCard {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(103, 207, 255, 0.06) 100%);
-  border: 1px solid rgba(138, 187, 255, 0.12);
-  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
   gap: 10px;
-  min-height: 132px;
-  padding: 18px;
+  min-height: 144px;
+  padding: 20px;
 }
 
 .highlightCard span {
-  color: rgba(221, 232, 249, 0.56);
+  color: rgba(221, 232, 249, 0.46);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .highlightCard strong {
   color: var(--ink);
-  font-size: 1.24rem;
-  line-height: 1.15;
+  font-size: 1.22rem;
+  line-height: 1.2;
 }
 
 .heroFeature {
   align-content: start;
-  background: linear-gradient(160deg, rgba(8, 23, 40, 0.98) 0%, rgba(6, 17, 31, 0.98) 100%);
-  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(224, 174, 87, 0.16), transparent 28%),
+    linear-gradient(160deg, rgba(10, 12, 15, 0.98) 0%, rgba(18, 21, 27, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 34px;
   color: #ffffff;
   gap: 30px;
-  grid-template-rows: auto auto auto auto minmax(72px, 1fr);
+  grid-template-rows: auto auto auto auto auto minmax(72px, 1fr);
   min-height: 100%;
-  padding: 22px;
+  padding: 24px;
 }
 
 .featureHeader {
@@ -146,7 +174,7 @@
 
 .featureTag,
 .featureEyebrow {
-  color: var(--blue);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -155,10 +183,10 @@
 
 .featureTag {
   align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
-  color: #eaf7ff;
+  color: #ffffff;
   display: inline-flex;
   padding: 8px 12px;
 }
@@ -171,15 +199,15 @@
 }
 
 .featureImageWrap {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
 }
 
 .featureImageWrap img {
   display: block;
-  height: 440px;
+  height: 520px;
   object-fit: cover;
   object-position: top center;
   width: 100%;
@@ -191,14 +219,16 @@
 }
 
 .featureEyebrow {
-  color: rgba(183, 235, 255, 0.86);
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .featureBody h2 {
-  font-size: clamp(1.9rem, 2.6vw, 2.6rem);
-  letter-spacing: -0.05em;
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  letter-spacing: -0.04em;
   line-height: 0.96;
   margin: 0;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .featureBody p {
@@ -208,10 +238,39 @@
   max-width: 44ch;
 }
 
+.featureSpecGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.featureSpecGrid article {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(138, 187, 255, 0.12);
+  border-radius: 22px;
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+}
+
+.featureSpecGrid span {
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.featureSpecGrid strong {
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
 .featureMeta span {
   align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(138, 187, 255, 0.14);
   border-radius: 999px;
   color: #f2f9ff;
   display: inline-flex;
@@ -246,12 +305,16 @@
   .highlightGrid {
     grid-template-columns: 1fr;
   }
+
+  .featureSpecGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 920px) {
   .hero,
   .heroEntered {
-    padding: 20px;
+    padding: 22px;
   }
 }
 
@@ -259,6 +322,7 @@
   .heroCopy h1 {
     font-size: clamp(2.5rem, 12vw, 4.2rem);
     max-width: none;
+    text-wrap: pretty;
   }
 
   .heroEvidence span {

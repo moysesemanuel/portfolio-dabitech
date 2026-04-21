@@ -14,11 +14,11 @@ export function PortfolioContact({ isPageReady }: PortfolioContactProps) {
     >
       <div className={styles.contactCopy}>
         <span className={sharedStyles.eyebrow}>Contato</span>
-        <h2>Se o seu projeto precisa parecer mais profissional, esse é o momento de conversar.</h2>
-        <p>Atendo negócios que querem vender melhor, transmitir mais confiança e organizar sua operação digital.</p>
+        <h2>Se o seu produto ou serviço ainda parece menor do que realmente é, eu resolvo isso na interface.</h2>
+        <p>Atendo negócios que precisam de apresentação mais forte, experiência mais madura e uma base técnica que sustente crescimento sem retrabalho.</p>
         <p>
-          Se você quer sair de uma presença improvisada para uma solução que realmente valorize o
-          que oferece, me chama e eu estruturo isso com você.
+          A conversa começa com escopo, direção visual e prioridade de negócio. Depois disso, eu
+          transformo a ideia em uma entrega publicada e convincente.
         </p>
       </div>
 

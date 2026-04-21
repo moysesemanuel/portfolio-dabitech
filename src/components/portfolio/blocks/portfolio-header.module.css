@@ -4,19 +4,19 @@
   -webkit-backdrop-filter: blur(20px);
   background: rgba(8, 26, 54, 0.86);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
+  border-radius: 28px;
   box-shadow: 0 22px 44px rgba(8, 26, 54, 0.18);
   display: grid;
   gap: 20px;
   grid-template-columns: auto 1fr auto;
   left: 50%;
   margin: 0 auto;
-  max-width: min(92vw, 1440px);
-  padding: 14px 18px;
+  max-width: min(94vw, 1520px);
+  padding: 14px 20px;
   position: fixed;
-  top: 18px;
+  top: 16px;
   transform: translateX(-50%);
-  width: min(92vw, 1440px);
+  width: min(94vw, 1520px);
   z-index: 20;
 }
 
@@ -36,16 +36,16 @@
 
 .brandCopy strong {
   color: #ffffff;
-  font-size: 1.78rem;
-  letter-spacing: -0.05em;
+  font-size: 1.34rem;
+  letter-spacing: -0.04em;
   line-height: 0.95;
 }
 
 .brandCopy span {
-  color: rgba(232, 244, 255, 0.68);
-  font-size: 0.7rem;
+  color: rgba(232, 244, 255, 0.54);
+  font-size: 0.64rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -59,7 +59,7 @@
 .navLink,
 .navLinkActive {
   color: rgba(255, 255, 255, 0.84);
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   font-weight: 700;
   padding-bottom: 8px;
   position: relative;
@@ -105,17 +105,17 @@
   box-shadow: 0 16px 28px rgba(94, 199, 255, 0.24);
   color: var(--navy-deep);
   font-size: 0.84rem;
-  min-height: 36px;
-  padding: 0 12px;
+  min-height: 40px;
+  padding: 0 14px;
 }
 
 .headerSecondaryCta {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #ffffff;
   font-size: 0.84rem;
-  min-height: 36px;
-  padding: 0 12px;
+  min-height: 40px;
+  padding: 0 14px;
 }
 
 @media (hover: hover) and (pointer: fine) {

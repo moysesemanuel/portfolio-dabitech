@@ -1,0 +1,224 @@
+.sectionBase {
+  min-height: 104vh;
+  position: relative;
+}
+
+.sectionLight {
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.sectionDark {
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.stickyFrame {
+  min-height: 88vh;
+  position: sticky;
+  top: 0;
+}
+
+.storyPanel {
+  align-items: center;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  min-height: 88vh;
+  padding: 24px max(32px, calc((100vw - 1320px) / 2)) 24px;
+}
+
+.panelLight {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(103, 207, 255, 0.18), transparent 24%),
+    linear-gradient(180deg, #f5f7fb 0%, #ffffff 58%, #eef4fa 100%);
+}
+
+.panelDark {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(103, 207, 255, 0.18), transparent 24%),
+    linear-gradient(180deg, #040912 0%, #091523 54%, #03070e 100%);
+}
+
+.storyCopy {
+  display: grid;
+  gap: 18px;
+}
+
+.copyLight {
+  color: #07192c;
+}
+
+.copyDark {
+  color: #eff6ff;
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.copyLight .eyebrow {
+  color: rgba(11, 42, 87, 0.58);
+}
+
+.copyDark .eyebrow {
+  color: rgba(221, 232, 249, 0.6);
+}
+
+.storyCopy h2 {
+  font-size: clamp(3.4rem, 7vw, 7rem);
+  letter-spacing: -0.05em;
+  line-height: 0.86;
+  margin: 0;
+  max-width: 11ch;
+  overflow-wrap: normal;
+  text-wrap: balance;
+  word-break: normal;
+}
+
+.typingTitle {
+  line-height: 0.86;
+  max-width: 11ch;
+}
+
+.titleWord {
+  display: inline-block;
+}
+
+.titleChar {
+  display: inline-block;
+  letter-spacing: -0.035em;
+  transition: color 320ms linear;
+}
+
+.titleCharInactive {
+  color: #00b6e6;
+}
+
+.titleCharActive {
+  color: #081523;
+}
+
+.titleCharInactiveDark {
+  color: #07111d;
+}
+
+.titleCharActiveDark {
+  color: #f4f8ff;
+}
+
+.srOnly {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.storyLead {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0;
+  max-width: 56ch;
+}
+
+.copyLight .storyLead {
+  color: rgba(8, 21, 35, 0.74);
+}
+
+.copyDark .storyLead {
+  color: rgba(231, 240, 252, 0.88);
+}
+
+.storySteps {
+  display: grid;
+  gap: 16px;
+}
+
+.storyStep {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 28px;
+  display: grid;
+  gap: 10px;
+  padding: 22px;
+  transition:
+    opacity 180ms linear,
+    transform 180ms linear;
+}
+
+.panelLight .storyStep {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(11, 42, 87, 0.12);
+  box-shadow: 0 20px 44px rgba(11, 42, 87, 0.1);
+}
+
+.panelDark .storyStep {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(138, 187, 255, 0.2);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.22);
+}
+
+.storyStep span {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.panelLight .storyStep span {
+  color: rgba(11, 42, 87, 0.58);
+}
+
+.panelDark .storyStep span {
+  color: rgba(191, 222, 252, 0.7);
+}
+
+.storyStep p {
+  line-height: 1.7;
+  margin: 0;
+}
+
+.panelLight .storyStep p {
+  color: rgba(8, 21, 35, 0.92);
+}
+
+.panelDark .storyStep p {
+  color: rgba(231, 240, 252, 0.94);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sectionBase {
+    min-height: auto;
+  }
+
+  .stickyFrame {
+    position: static;
+  }
+
+  .storyPanel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 980px) {
+  .storyPanel {
+    gap: 24px;
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 40px 24px 32px;
+  }
+
+  .storyCopy h2 {
+    font-size: clamp(2.8rem, 12vw, 4.8rem);
+    letter-spacing: -0.04em;
+    max-width: 11ch;
+  }
+}

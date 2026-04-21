@@ -2,14 +2,16 @@
 .projectsSectionEntered {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  background: var(--surface);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.01) 100%),
+    var(--surface);
   border: 1px solid var(--line);
-  border-radius: 36px;
-  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.22);
+  border-radius: 40px;
+  box-shadow: 0 30px 72px rgba(0, 0, 0, 0.28);
   display: grid;
-  gap: 26px;
+  gap: 28px;
   overflow: hidden;
-  padding: 30px;
+  padding: 32px;
   scroll-margin-top: 122px;
   transition:
     opacity 520ms ease,
@@ -29,25 +31,26 @@
 
 .carouselShell {
   display: grid;
-  gap: 18px;
+  gap: 20px;
 }
 
 .projectSelectorRail {
   display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .projectSelector,
 .projectSelectorActive {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(138, 187, 255, 0.12);
-  border-radius: 22px;
+  border-radius: 24px;
   color: var(--ink);
   cursor: pointer;
   display: grid;
   gap: 8px;
-  padding: 18px;
+  min-height: 120px;
+  padding: 18px 16px;
   text-align: left;
   transition:
     transform 180ms ease,
@@ -58,45 +61,54 @@
 
 .projectSelector span,
 .projectSelectorActive span {
-  color: rgba(191, 222, 252, 0.6);
+  color: rgba(255, 255, 255, 0.46);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .projectSelector strong,
 .projectSelectorActive strong {
-  font-size: 1rem;
-  line-height: 1.35;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  overflow-wrap: normal;
+  text-wrap: pretty;
+  word-break: normal;
 }
 
 .projectSelectorActive {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(103, 207, 255, 0.08) 100%);
+  background:
+    radial-gradient(circle at top right, rgba(224, 174, 87, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.04) 100%);
   border-color: rgba(103, 207, 255, 0.26);
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.18);
 }
 
 .projectCard {
-  background: linear-gradient(135deg, rgba(8, 23, 40, 0.98) 0%, rgba(6, 17, 31, 0.98) 100%);
-  border-radius: 32px;
+  background:
+    radial-gradient(circle at top right, rgba(224, 174, 87, 0.16), transparent 28%),
+    linear-gradient(135deg, rgba(10, 11, 14, 0.98) 0%, rgba(17, 19, 23, 0.98) 100%);
+  border: 1px solid rgba(138, 187, 255, 0.12);
+  border-radius: 34px;
   color: #ffffff;
   display: grid;
-  gap: 20px;
-  grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.12fr);
+  gap: 24px;
+  grid-template-columns: minmax(360px, 1fr) minmax(0, 0.92fr);
   overflow: hidden;
-  padding: 20px;
+  padding: 24px;
 }
 
 .projectVisual {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
 }
 
 .projectVisual img {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 12;
   display: block;
   height: 100%;
   object-fit: cover;
@@ -137,10 +149,13 @@
 }
 
 .projectHeader h3 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -0.06em;
-  line-height: 0.94;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  letter-spacing: -0.04em;
+  line-height: 0.96;
   margin: 0;
+  overflow-wrap: normal;
+  text-wrap: balance;
+  word-break: normal;
 }
 
 .projectHeader p {
@@ -160,14 +175,14 @@
 
 .projectPrimaryCta {
   background: linear-gradient(135deg, var(--blue) 0%, #b7ebff 100%);
-  box-shadow: 0 16px 28px rgba(94, 199, 255, 0.24);
+  box-shadow: 0 18px 34px rgba(94, 199, 255, 0.24);
   color: var(--navy-deep);
 }
 
 .projectMeta span {
   align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(138, 187, 255, 0.14);
   border-radius: 999px;
   color: #f2f9ff;
   display: inline-flex;
@@ -178,12 +193,12 @@
 }
 
 .scopeCard {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(138, 187, 255, 0.12);
+  border-radius: 26px;
   display: grid;
   gap: 12px;
-  padding: 18px;
+  padding: 20px;
 }
 
 .scopeCard strong {
@@ -210,7 +225,7 @@
 
 .carouselButton {
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(138, 187, 255, 0.14);
   border-radius: 999px;
   color: var(--ink);
@@ -271,9 +286,12 @@
 }
 
 @media (max-width: 1180px) {
-  .projectSelectorRail,
   .projectCard {
     grid-template-columns: 1fr;
+  }
+
+  .projectSelectorRail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .carouselFooter {
@@ -290,11 +308,12 @@
 
 @media (max-width: 640px) {
   .projectHeader h3 {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .projectSelectorRail {
     gap: 10px;
+    grid-template-columns: 1fr;
   }
 
   .projectActions,
