@@ -124,7 +124,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     instagramLabel: "DaBi Tech Instagram",
     header: {
       nav: {
-        services: "What this solves",
+        services: "What this solves ?",
         projects: "Solutions",
         contact: "Contact",
       },
@@ -132,27 +132,35 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
       primaryCta: "View solutions",
     },
     hero: {
-      eyebrow: "Full-stack systems for service businesses",
+      eyebrow: "Digital systems for service businesses",
       signalBar: [
-        "Booking conversion",
-        "Operations and admin flows",
-        "Retention-ready product thinking",
+        "Stronger positioning",
+        "Smoother operations",
+        "Better customer experience",
       ],
       title:
-        "Full-stack systems for service businesses that need more bookings, better operations, and stronger customer retention.",
+        "Digital systems for service businesses that need stronger positioning, smoother operations, and better customer experience.",
       lead:
-        "I build modern web platforms for barbershops, beauty studios, clinics, and local premium brands, connecting customer-facing experience with day-to-day operations in one product.",
+        "I build modern web platforms that help service businesses improve perceived value, organize operations, and create clearer customer journeys — from commercial presentation to day-to-day use.",
       evidence: [
-        "Business thinking before feature lists",
-        "Conversion-oriented UX with operational clarity",
-        "Frontend and backend ownership in the same delivery",
+        "Business clarity before feature overload",
+        "Customer-facing and internal flows working together",
+        "One delivery connecting strategy, interface, and system",
       ],
       primaryCta: "View solutions",
       secondaryCta: "Book a discovery call",
       featuredTag: "Featured solution",
       featureSpecs: [
-        { label: "Approach", value: "Commercial positioning plus real operational workflows" },
-        { label: "Focus", value: "Bookings, retention, and trust-building product design" },
+        {
+          label: "Approach",
+          value:
+            "Commercial positioning with operational clarity behind it",
+        },
+        {
+          label: "Focus",
+          value:
+            "Customer experience, internal structure, and business perception",
+        },
       ],
       featureCta: "Open solution",
     },
@@ -174,8 +182,9 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         "Real published screens moving like a product showcase, so the portfolio feels closer to a premium service offer than a static gallery.",
     },
     services: {
-      eyebrow: "What this solves",
-      title: "Digital systems that reduce operational friction and make service businesses look more premium.",
+      eyebrow: "What this solves ?",
+      title:
+        "Digital systems that reduce operational friction and make service businesses look more premium.",
       description:
         "The goal is not only to ship a website or dashboard. It is to improve booking flow, customer perception, and internal routines in the same product decision.",
       items: [
@@ -187,7 +196,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         {
           title: "Avoid double bookings and operational confusion",
           description:
-            "Admin-first thinking organizes appointments, customer data, and daily actions so the team can operate with more confidence.",
+            "A clearer internal structure helps organize appointments, customers, and daily actions so the business can operate with more confidence.",
         },
         {
           title: "Increase repeat revenue with retention mechanics",
@@ -198,9 +207,10 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     },
     projects: {
       eyebrow: "Solutions",
-      title: "Selected solutions built to connect customer experience, operations, and business clarity.",
+      title:
+        "Selected solutions across customer experience, commercial structure, operations, and infrastructure.",
       description:
-        "Each project is presented as a business solution first, with technical execution supporting positioning, conversion, and operational maturity.",
+        "Some projects improve how the business is perceived and used by customers. Others strengthen internal routine, access control, and operational clarity. Together, they show a broader ability to design digital systems beyond a single niche.",
       primaryCta: "Open full solution",
       previous: "Previous",
       next: "Next",
@@ -210,21 +220,21 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     },
     darkStory: {
       eyebrow: "Authority in depth",
-      title: "Authority doesn't come from visuals alone. It comes from how the solution is conceived.",
+      title: "Authority appears when positioning and execution work together.",
       body:
-        "Deeper sections should not lose clarity. The content starts almost merged with the background and gains brightness as scroll reinforces trust, structure, and delivery confidence.",
+        "A reliable product needs to work well for the customer, for the team running it, and for the business behind it. Authority does not come from visuals alone. It comes from combining commercial clarity, flow, and real delivery structure.",
       details: [
-        "Contrast rises with scroll to create a more premium reveal.",
-        "The block reinforces authority before contact and commercial action.",
-        "Footer and CTA arrive after the descent, with the brand already positioned as a serious partner.",
+        "Every project starts with business goals, flow, and operational priorities.",
+        "The delivery connects customer experience with the internal routine of the business.",
+        "The result is a clearer, more solid system that is ready to evolve.",
       ],
     },
     contact: {
       eyebrow: "Contact",
-      title: "I build booking and operations systems for businesses that need a stronger commercial presence.",
+      title: "Let’s build a stronger digital experience for your business.",
       paragraphs: [
-        "Ideal for barbershops, beauty studios, clinics, and local premium brands that want better digital experience without generic execution.",
-        "The process starts with business goals, user flow, and positioning. Then I turn that direction into a published product with frontend, backend, and operational logic working together.",
+        "Ideal for barbershops, beauty studios, clinics, and local premium brands that want a better digital experience without generic execution.",
+        "The process starts with business goals, customer flow, and commercial positioning. From there, I turn that direction into a published solution that improves perception, organization, and day-to-day use.",
       ],
       whatsappCta: "Ask for a quote on WhatsApp",
     },
@@ -238,17 +248,33 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
       newsletterBody: "I want to subscribe to the DaBi Tech newsletter.",
     },
     highlights: [
-      { label: "Positioning", value: "Business clarity, product thinking, and premium presentation" },
-      { label: "Delivery", value: "Booking flows, admin operations, and scalable web systems" },
-      { label: "Fit", value: "Barbershops, beauty studios, clinics, and local service brands" },
+      {
+        label: "Positioning",
+        value: "Stronger perceived value and clearer commercial presence",
+      },
+      {
+        label: "Delivery",
+        value:
+          "Customer experience, internal routine, and system structure in one delivery",
+      },
+      {
+        label: "Range",
+        value:
+          "From customer-facing platforms to operational and infrastructure systems",
+      },
     ],
     projectsList: [
       {
-        eyebrow: "Solution",
+        eyebrow: "Customer experience",
         title: "Booking and retention platform for barbershops",
         description:
-          "A full-stack system designed to help grooming businesses convert more bookings, manage daily operations, and encourage repeat purchases through loyalty and customer flows.",
-        meta: ["Online booking", "Customer area", "Admin operations", "Loyalty mechanics"],
+          "A digital platform designed to help grooming businesses increase booking conversion, improve day-to-day organization, and strengthen customer loyalty through a more premium experience.",
+        meta: [
+          "Booking conversion",
+          "Customer loyalty",
+          "Daily operations",
+          "Recurring revenue",
+        ],
         href: "/portfolio/barbearia",
         imageSrc: "/img/localhost_3001_admin_agenda.png",
         imageAlt: "Admin schedule interface for the barbershop platform",
@@ -259,11 +285,16 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
           "Built to simulate a real commercial workflow for service businesses, with focus on booking conversion, retention, and day-to-day operations.",
       },
       {
-        eyebrow: "Product",
+        eyebrow: "Content platform",
         title: "Lana Baby Lab",
         description:
-          "A content-driven platform with stronger editorial positioning, private access, and a more premium reading experience for a niche audience.",
-        meta: ["Age-based content", "Private studio", "Authentication", "Node.js"],
+          "A premium content platform designed to strengthen niche authority, organize private access, and create a more consistent digital experience for a specialized brand.",
+        meta: [
+          "Niche authority",
+          "Private content access",
+          "Premium reading flow",
+          "Specialized brand structure",
+        ],
         href: "/portfolio/lana-baby-lab",
         imageSrc: "/img/portfolio-lana-baby-lab-preview.svg",
         imageAlt: "Preview of the Lana Baby Lab platform",
@@ -274,11 +305,16 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
           "The product improves authority, publishing structure, and premium perception for a specialized brand that needs trust and consistency.",
       },
       {
-        eyebrow: "Solution",
+        eyebrow: "Commercial operations",
         title: "Sales platform with commercial landing flow",
         description:
-          "A system concept that combines product positioning, landing experience, and internal commercial workflows in one clearer offer.",
-        meta: ["CRM", "Sales pipeline", "Reports", "Commercial landing page"],
+          "A commercial platform built to capture leads, organize follow-up, and give the business more visibility over pipeline, conversion, and positioning.",
+        meta: [
+          "Lead capture",
+          "Commercial flow",
+          "Pipeline visibility",
+          "Stronger positioning",
+        ],
         href: "/portfolio/sistema-vendas",
         imageSrc: "/img/portfolio-sales-system-real-preview.png",
         imageAlt: "Dashboard of the sales platform",
@@ -292,8 +328,13 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         eyebrow: "Infrastructure",
         title: "Authentication hub for multiple systems",
         description:
-          "A centralized login foundation built for product ecosystems that need session control, reusable access flows, and future integration readiness.",
-        meta: ["Central login", "HTTP-only cookies", "Prisma", "SSO-ready"],
+          "A centralized authentication foundation for digital ecosystems that need consistent access control, reusable login flows, and cleaner expansion across products.",
+        meta: [
+          "Centralized access",
+          "Session consistency",
+          "Reusable login flow",
+          "Expansion readiness",
+        ],
         href: "/portfolio/central-autenticacao",
         imageSrc: "/img/portfolio-auth-system-real-preview.png",
         imageAlt: "Authentication hub interface",
@@ -304,11 +345,16 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
           "The architecture reduces duplication across products and prepares the ecosystem for secure authentication growth without restarting from scratch.",
       },
       {
-        eyebrow: "Solution",
+        eyebrow: "Internal operations",
         title: "Support and ticket workflow platform",
         description:
-          "An operational support system designed to make service requests clearer, more trackable, and more professional for both clients and internal teams.",
-        meta: ["Help desk", "Kanban", "Service flow", "Technical portal"],
+          "An internal operations platform created to organize requests, improve response flow, and make service routines clearer for both teams and clients.",
+        meta: [
+          "Service requests",
+          "Clear ownership",
+          "Response structure",
+          "Operational reliability",
+        ],
         href: "/portfolio/sistema-chamados",
         imageSrc: "/img/portfolio-support-tickets-preview.svg",
         imageAlt: "Preview of the support workflow platform",
@@ -320,12 +366,13 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
       },
     ],
   },
+
   "pt-BR": {
     socialLabel: "Redes sociais",
     instagramLabel: "Instagram da DaBi Tech",
     header: {
       nav: {
-        services: "O que isso resolve",
+        services: "O que isso resolve?",
         projects: "Soluções",
         contact: "Contato",
       },
@@ -333,27 +380,35 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
       primaryCta: "Ver soluções",
     },
     hero: {
-      eyebrow: "Sistemas full-stack para negócios de serviço",
+      eyebrow: "Sistemas digitais para negócios de serviço",
       signalBar: [
-        "Conversão em agendamento",
-        "Operação e admin workflows",
-        "Retenção pensada como produto",
+        "Posicionamento mais forte",
+        "Operação mais fluida",
+        "Melhor experiência do cliente",
       ],
       title:
-        "Sistemas full-stack para negócios de serviço que precisam de mais agendamentos, operação mais fluida e retenção mais forte.",
+        "Sistemas digitais para negócios de serviço que precisam de posicionamento mais forte, operação mais fluida e melhor experiência para o cliente.",
       lead:
-        "Eu construo plataformas web para barbearias, estúdios de beleza, clínicas e marcas locais premium, conectando experiência do cliente com operação diária no mesmo produto.",
+        "Eu construo plataformas web que ajudam negócios de serviço a aumentar valor percebido, organizar a operação e criar jornadas mais claras para o cliente — da apresentação comercial ao uso no dia a dia.",
       evidence: [
-        "Visão de negócio antes da lista de funcionalidades",
-        "UX orientada à conversão com clareza operacional",
-        "Frontend e backend sob a mesma entrega",
+        "Clareza de negócio antes do excesso de funcionalidades",
+        "Fluxos do cliente e da operação funcionando juntos",
+        "Uma entrega conectando estratégia, interface e sistema",
       ],
       primaryCta: "Ver soluções",
       secondaryCta: "Agendar uma conversa",
       featuredTag: "Solução em destaque",
       featureSpecs: [
-        { label: "Abordagem", value: "Posicionamento comercial com operação real por trás" },
-        { label: "Foco", value: "Agendamento, retenção e confiança no produto" },
+        {
+          label: "Abordagem",
+          value:
+            "Posicionamento comercial com clareza operacional por trás",
+        },
+        {
+          label: "Foco",
+          value:
+            "Experiência do cliente, estrutura interna e percepção de negócio",
+        },
       ],
       featureCta: "Abrir solução",
     },
@@ -375,8 +430,9 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         "Telas reais publicadas em ritmo contínuo, para o portfólio parecer mais uma oferta premium de serviço do que uma galeria estática.",
     },
     services: {
-      eyebrow: "O que isso resolve",
-      title: "Sistemas digitais que reduzem atrito operacional e fazem negócios de serviço parecerem mais premium.",
+      eyebrow: "O que isso resolve ?",
+      title:
+        "Sistemas digitais que reduzem atrito operacional e fazem negócios de serviço parecerem mais premium.",
       description:
         "O objetivo não é só publicar um site ou dashboard. É melhorar agendamento, percepção de valor e rotina interna dentro da mesma decisão de produto.",
       items: [
@@ -388,7 +444,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         {
           title: "Evitar choques de agenda e ruído operacional",
           description:
-            "Pensamento orientado a admin workflow organiza horários, clientes e ações do dia a dia para a operação rodar com mais segurança.",
+            "Uma estrutura interna mais clara ajuda a organizar horários, clientes e ações do dia a dia para a operação rodar com mais segurança.",
         },
         {
           title: "Aumentar recorrência com mecânicas de retenção",
@@ -399,9 +455,10 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     },
     projects: {
       eyebrow: "Soluções",
-      title: "Soluções selecionadas para conectar experiência do cliente, operação e clareza de negócio.",
+      title:
+        "Soluções selecionadas entre experiência do cliente, estrutura comercial, operação e infraestrutura.",
       description:
-        "Cada projeto é apresentado primeiro como solução de negócio, com a execução técnica sustentando posicionamento, conversão e maturidade operacional.",
+        "Alguns projetos melhoram a forma como o negócio é percebido e usado pelo cliente. Outros fortalecem rotina interna, controle de acesso e clareza operacional. Juntos, eles mostram uma capacidade mais ampla de construir sistemas digitais além de um único nicho.",
       primaryCta: "Abrir solução completa",
       previous: "Anterior",
       next: "Próximo",
@@ -411,21 +468,22 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     },
     darkStory: {
       eyebrow: "Autoridade em profundidade",
-      title: "Autoridade não vem do visual sozinho. Vem da forma como a solução é pensada.",
+      title:
+        "Autoridade aparece quando posicionamento e execução trabalham juntos.",
       body:
-        "Um produto confiável precisa funcionar bem para quem compra, para quem administra e para quem depende da operação no dia a dia. Autoridade aparece quando posicionamento, fluxo e execução trabalham juntos.",
+        "Um produto confiável precisa funcionar bem para quem compra, para quem administra e para quem depende da operação no dia a dia. Autoridade não vem só do visual. Ela aparece quando a solução une clareza comercial, fluxo e estrutura real de entrega.",
       details: [
-        "Cada projeto começa com objetivo de negócio e prioridade operacional.",
-        "A entrega conecta experiência do cliente com rotina interna real.",
-        "O foco é construir algo sólido, útil e pronto para crescer.",
+        "Cada projeto começa com objetivo de negócio, fluxo e prioridade operacional.",
+        "A entrega conecta experiência do cliente com a rotina interna do negócio.",
+        "O resultado é um sistema mais sólido, claro e pronto para evoluir.",
       ],
     },
     contact: {
       eyebrow: "Contato",
-      title: "Eu construo sistemas de agendamento e operação para negócios que precisam de presença comercial mais forte.",
+      title: "Vamos construir uma experiência digital mais forte para o seu negócio.",
       paragraphs: [
         "Ideal para barbearias, estúdios de beleza, clínicas e marcas locais premium que querem uma experiência digital melhor sem execução genérica.",
-        "O processo começa por objetivo de negócio, fluxo do usuário e posicionamento. Depois disso, eu transformo essa direção em um produto publicado com frontend, backend e lógica operacional trabalhando juntos.",
+        "O processo começa por objetivo de negócio, fluxo do cliente e posicionamento comercial. A partir disso, eu transformo essa direção em uma solução publicada que melhora percepção, organização e uso no dia a dia.",
       ],
       whatsappCta: "Pedir orçamento no WhatsApp",
     },
@@ -439,20 +497,37 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
       newsletterBody: "Quero entrar na newsletter da DaBi Tech.",
     },
     highlights: [
-      { label: "Posicionamento", value: "Clareza de negócio, visão de produto e apresentação premium" },
-      { label: "Entrega", value: "Agendamento, operação interna e sistemas web escaláveis" },
-      { label: "Fit", value: "Barbearias, estúdios, clínicas e marcas locais de serviço" },
+      {
+        label: "Posicionamento",
+        value: "Mais valor percebido e presença comercial mais clara",
+      },
+      {
+        label: "Entrega",
+        value:
+          "Experiência do cliente, rotina interna e estrutura de sistema na mesma entrega",
+      },
+      {
+        label: "Amplitude",
+        value:
+          "De plataformas voltadas ao cliente até sistemas de operação e infraestrutura",
+      },
     ],
     projectsList: [
       {
-        eyebrow: "Solução",
+        eyebrow: "Experiência do cliente",
         title: "Plataforma de agendamento e retenção para barbearias",
         description:
-          "Um sistema full-stack pensado para ajudar negócios de grooming a converter mais agendamentos, organizar a operação diária e estimular recorrência com fluxos de fidelidade e relacionamento.",
-        meta: ["Agendamento online", "Área do cliente", "Operação administrativa", "Fidelidade"],
+          "Uma plataforma digital pensada para ajudar negócios de grooming a aumentar a conversão em agendamentos, melhorar a organização do dia a dia e fortalecer a fidelização com uma experiência mais premium.",
+        meta: [
+          "Conversão em agendamentos",
+          "Fidelização de clientes",
+          "Operação diária",
+          "Receita recorrente",
+        ],
         href: "/portfolio/barbearia",
         imageSrc: "/img/localhost_3001_admin_agenda.png",
-        imageAlt: "Interface de agenda administrativa da plataforma para barbearia",
+        imageAlt:
+          "Interface de agenda administrativa da plataforma para barbearia",
         imageWidth: 3456,
         imageHeight: 11084,
         scopeTitle: "Impacto no negócio",
@@ -460,11 +535,16 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
           "Construído para simular um fluxo comercial real de negócios de serviço, com foco em conversão de agendamento, retenção e operação do dia a dia.",
       },
       {
-        eyebrow: "Produto",
+        eyebrow: "Plataforma de conteúdo",
         title: "Lana Baby Lab",
         description:
-          "Uma plataforma editorial com posicionamento mais forte, acesso privado e experiência de leitura mais premium para um público nichado.",
-        meta: ["Conteúdo por idade", "Studio privado", "Autenticação", "Node.js"],
+          "Uma plataforma de conteúdo premium criada para fortalecer autoridade em nicho, organizar acesso privado e construir uma experiência digital mais consistente para uma marca especializada.",
+        meta: [
+          "Autoridade de nicho",
+          "Acesso privado ao conteúdo",
+          "Experiência premium de leitura",
+          "Estrutura de marca especializada",
+        ],
         href: "/portfolio/lana-baby-lab",
         imageSrc: "/img/portfolio-lana-baby-lab-preview.svg",
         imageAlt: "Preview da plataforma Lana Baby Lab",
@@ -475,11 +555,16 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
           "O produto melhora autoridade, organização editorial e percepção premium para uma marca especializada que depende de confiança e consistência.",
       },
       {
-        eyebrow: "Solução",
+        eyebrow: "Operação comercial",
         title: "Plataforma comercial com landing page de vendas",
         description:
-          "Um conceito de sistema que combina posicionamento de produto, experiência de landing page e fluxos comerciais internos dentro de uma proposta mais clara.",
-        meta: ["CRM", "Funil comercial", "Relatórios", "Landing page comercial"],
+          "Uma plataforma comercial criada para captar leads, organizar acompanhamento e dar ao negócio mais visibilidade sobre funil, conversão e posicionamento.",
+        meta: [
+          "Captação de leads",
+          "Fluxo comercial",
+          "Visibilidade do funil",
+          "Posicionamento mais forte",
+        ],
         href: "/portfolio/sistema-vendas",
         imageSrc: "/img/portfolio-sales-system-real-preview.png",
         imageAlt: "Dashboard da plataforma comercial",
@@ -493,8 +578,13 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         eyebrow: "Infraestrutura",
         title: "Central de autenticação para múltiplos sistemas",
         description:
-          "Uma base de login centralizada para ecossistemas de produto que precisam de controle de sessão, reaproveitamento de acesso e prontidão para integrações futuras.",
-        meta: ["Login central", "Cookies HTTP-only", "Prisma", "Pronto para SSO"],
+          "Uma fundação de autenticação centralizada para ecossistemas digitais que precisam de controle de acesso consistente, fluxos reutilizáveis de login e expansão mais organizada entre produtos.",
+        meta: [
+          "Acesso centralizado",
+          "Consistência de sessão",
+          "Fluxo reutilizável de login",
+          "Pronto para expansão",
+        ],
         href: "/portfolio/central-autenticacao",
         imageSrc: "/img/portfolio-auth-system-real-preview.png",
         imageAlt: "Interface da central de autenticação",
@@ -505,11 +595,16 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
           "A arquitetura reduz repetição entre produtos e prepara o ecossistema para crescer com autenticação segura sem precisar recomeçar do zero.",
       },
       {
-        eyebrow: "Solução",
+        eyebrow: "Operação interna",
         title: "Plataforma de suporte e fluxo de chamados",
         description:
-          "Um sistema operacional de suporte pensado para tornar solicitações mais claras, rastreáveis e profissionais para clientes e equipes internas.",
-        meta: ["Help desk", "Kanban", "Fluxo de atendimento", "Portal técnico"],
+          "Uma plataforma de operação interna criada para organizar solicitações, melhorar o fluxo de resposta e tornar as rotinas de atendimento mais claras para equipes e clientes.",
+        meta: [
+          "Solicitações de serviço",
+          "Responsabilidade clara",
+          "Estrutura de resposta",
+          "Confiabilidade operacional",
+        ],
         href: "/portfolio/sistema-chamados",
         imageSrc: "/img/portfolio-support-tickets-preview.svg",
         imageAlt: "Preview da plataforma de fluxo de chamados",
