@@ -158,13 +158,13 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     },
     lightStory: {
       eyebrow: "Positioning first",
-      title: "Start with a stronger commercial signal.",
+      title: "Start with a stronger commercial presence.",
       body:
         "The first screen should make the business feel more premium, more organized, and more ready to be hired. Design has to raise perceived value before the visitor reads every feature.",
       details: [
-        "The headline reveals itself as the positioning becomes clearer through scroll.",
-        "Each block enters like part of the same commercial narrative, not like disconnected UI cards.",
-        "The section guides perceived authority before the visitor reaches the solutions grid.",
+        "Strong positioning comes before feature lists.",
+        "Design should increase perceived value, clarity, and trust.",
+        "The right interface makes the business feel more ready to be chosen.",
       ],
     },
     marquee: {
@@ -210,7 +210,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     },
     darkStory: {
       eyebrow: "Authority in depth",
-      title: "When the visual layer deepens, the message needs more authority.",
+      title: "Authority doesn't come from visuals alone. It comes from how the solution is conceived.",
       body:
         "Deeper sections should not lose clarity. The content starts almost merged with the background and gains brightness as scroll reinforces trust, structure, and delivery confidence.",
       details: [
@@ -359,13 +359,13 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     },
     lightStory: {
       eyebrow: "Posicionamento primeiro",
-      title: "Comece com um sinal comercial mais forte.",
+      title: "Comece com uma presença comercial mais forte.",
       body:
-        "A primeira dobra precisa fazer o negócio parecer mais premium, mais organizado e mais pronto para ser contratado. O design precisa aumentar valor percebido antes mesmo de a pessoa ler todas as features.",
+        "A primeira impressão do produto não deve apenas parecer bonita. Ela precisa transmitir organização, clareza e confiança para que o negócio seja percebido como algo mais sólido, valioso e pronto para ser escolhido.",
       details: [
-        "O título vai se revelando conforme o posicionamento comercial fica mais claro no scroll.",
-        "Cada bloco entra como parte da mesma narrativa de venda, não como cards desconectados.",
-        "A seção conduz percepção de autoridade antes de a pessoa chegar na grade de soluções.",
+        "O produto precisa comunicar valor antes de explicar funcionalidades.",
+        "A experiência visual deve reforçar organização, confiança e diferenciação.",
+        "Cada decisão de interface precisa servir à percepção comercial do negócio.",
       ],
     },
     marquee: {
@@ -411,13 +411,13 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     },
     darkStory: {
       eyebrow: "Autoridade em profundidade",
-      title: "Quando a camada visual aprofunda, a mensagem precisa ganhar autoridade.",
+      title: "Autoridade não vem do visual sozinho. Vem da forma como a solução é pensada.",
       body:
-        "Nas seções mais densas, a clareza não pode cair. O conteúdo nasce quase fundido ao fundo e ganha brilho conforme o scroll reforça confiança, estrutura e consistência de entrega.",
+        "Um produto confiável precisa funcionar bem para quem compra, para quem administra e para quem depende da operação no dia a dia. Autoridade aparece quando posicionamento, fluxo e execução trabalham juntos.",
       details: [
-        "O contraste sobe com o scroll para criar uma revelação mais premium.",
-        "O bloco sustenta autoridade antes do contato e da ação comercial.",
-        "Rodapé e CTA chegam depois dessa descida, com a marca já posicionada como parceira séria.",
+        "Cada projeto começa com objetivo de negócio e prioridade operacional.",
+        "A entrega conecta experiência do cliente com rotina interna real.",
+        "O foco é construir algo sólido, útil e pronto para crescer.",
       ],
     },
     contact: {
