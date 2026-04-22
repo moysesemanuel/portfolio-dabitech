@@ -1,49 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
 import sharedStyles from "../portfolio-shared.module.css";
-import type { PortfolioProject } from "../portfolio-home-page.data";
+import type {
+  PortfolioHeroCopy,
+  PortfolioHighlight,
+  PortfolioProject,
+} from "../portfolio-home-page.data";
 import styles from "./portfolio-hero.module.css";
 
-type Highlight = {
-  label: string;
-  value: string;
-};
-
 type PortfolioHeroProps = {
+  copy: PortfolioHeroCopy;
   featuredProject: PortfolioProject;
-  highlights: readonly Highlight[];
+  highlights: PortfolioHighlight[];
   isPageReady: boolean;
 };
 
-export function PortfolioHero({ featuredProject, highlights, isPageReady }: PortfolioHeroProps) {
+export function PortfolioHero({ copy, featuredProject, highlights, isPageReady }: PortfolioHeroProps) {
   return (
     <section className={isPageReady ? styles.heroEntered : styles.hero}>
       <div className={styles.heroCopy}>
-        <span className={sharedStyles.eyebrow}>Portfólio de produto digital</span>
+        <span className={sharedStyles.eyebrow}>{copy.eyebrow}</span>
         <div className={styles.heroSignalBar}>
-          <span>Design com cara de produto real</span>
-          <span>Interface publicada</span>
-          <span>Base pronta para evoluir</span>
+          {copy.signalBar.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
         </div>
-        <h1>Interfaces e páginas com o mesmo peso visual de uma landing de produto premium.</h1>
-        <p className={styles.heroLead}>
-          Eu desenho e implemento experiências web para negócios que precisam parecer mais
-          organizados, mais sérios e mais valiosos, sem cair em layout genérico ou apresentação
-          improvisada.
-        </p>
+        <h1>{copy.title}</h1>
+        <p className={styles.heroLead}>{copy.lead}</p>
 
         <div className={styles.heroEvidence}>
-          <span>Narrativa visual clara para vender melhor</span>
-          <span>Blocos com hierarquia, contraste e ritmo de leitura</span>
-          <span>Execução técnica suficiente para virar produto de verdade</span>
+          {copy.evidence.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
         </div>
 
         <div className={styles.heroActions}>
           <Link className={`${sharedStyles.buttonBase} ${styles.heroPrimaryCta}`} href="#projetos">
-            Ver projetos
+            {copy.primaryCta}
           </Link>
           <a className={`${sharedStyles.buttonBase} ${styles.heroSecondaryCta}`} href="#contato">
-            Solicitar um projeto
+            {copy.secondaryCta}
           </a>
         </div>
 
@@ -59,7 +55,7 @@ export function PortfolioHero({ featuredProject, highlights, isPageReady }: Port
 
       <aside className={styles.heroFeature}>
         <div className={styles.featureHeader}>
-          <span className={styles.featureTag}>Projeto em destaque</span>
+          <span className={styles.featureTag}>{copy.featuredTag}</span>
           <span className={styles.featureIndex}>01</span>
         </div>
 
@@ -80,14 +76,12 @@ export function PortfolioHero({ featuredProject, highlights, isPageReady }: Port
         </div>
 
         <div className={styles.featureSpecGrid}>
-          <article>
-            <span>Abordagem</span>
-            <strong>Interface comercial + operação real</strong>
-          </article>
-          <article>
-            <span>Foco</span>
-            <strong>Valor percebido, clareza e confiança</strong>
-          </article>
+          {copy.featureSpecs.map((item) => (
+            <article key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+            </article>
+          ))}
         </div>
 
         <div className={styles.featureMeta}>
@@ -97,7 +91,7 @@ export function PortfolioHero({ featuredProject, highlights, isPageReady }: Port
         </div>
 
         <Link className={`${sharedStyles.buttonBase} ${styles.featurePrimaryCta}`} href={featuredProject.href}>
-          Ver case
+          {copy.featureCta}
         </Link>
       </aside>
     </section>

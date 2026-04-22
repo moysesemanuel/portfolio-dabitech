@@ -1,25 +1,25 @@
 import Link from "next/link";
+import type { PortfolioContactCopy } from "../portfolio-home-page.data";
 import sharedStyles from "../portfolio-shared.module.css";
 import styles from "./portfolio-contact.module.css";
 
 type PortfolioContactProps = {
+  copy: PortfolioContactCopy;
   isPageReady: boolean;
 };
 
-export function PortfolioContact({ isPageReady }: PortfolioContactProps) {
+export function PortfolioContact({ copy, isPageReady }: PortfolioContactProps) {
   return (
     <section
       className={isPageReady ? styles.contactSectionEntered : styles.contactSection}
       id="contato"
     >
       <div className={styles.contactCopy}>
-        <span className={sharedStyles.eyebrow}>Contato</span>
-        <h2>Se o seu produto ou serviço ainda parece menor do que realmente é, eu resolvo isso na interface.</h2>
-        <p>Atendo negócios que precisam de apresentação mais forte, experiência mais madura e uma base técnica que sustente crescimento sem retrabalho.</p>
-        <p>
-          A conversa começa com escopo, direção visual e prioridade de negócio. Depois disso, eu
-          transformo a ideia em uma entrega publicada e convincente.
-        </p>
+        <span className={sharedStyles.eyebrow}>{copy.eyebrow}</span>
+        <h2>{copy.title}</h2>
+        {copy.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </div>
 
       <div className={styles.contactActions}>
@@ -32,7 +32,7 @@ export function PortfolioContact({ isPageReady }: PortfolioContactProps) {
           rel="noreferrer"
           target="_blank"
         >
-          Pedir orçamento no WhatsApp
+          {copy.whatsappCta}
         </Link>
       </div>
     </section>

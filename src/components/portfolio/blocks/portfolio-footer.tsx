@@ -1,13 +1,15 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import type { PortfolioFooterCopy } from "../portfolio-home-page.data";
 import styles from "./portfolio-footer.module.css";
 
 type PortfolioFooterProps = {
+  copy: PortfolioFooterCopy;
   isPageReady: boolean;
 };
 
-export function PortfolioFooter({ isPageReady }: PortfolioFooterProps) {
+export function PortfolioFooter({ copy, isPageReady }: PortfolioFooterProps) {
   const [email, setEmail] = useState("");
 
   const handleNewsletterSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -19,8 +21,8 @@ export function PortfolioFooter({ isPageReady }: PortfolioFooterProps) {
       return;
     }
 
-    const subject = encodeURIComponent("Newsletter DaBi Tech");
-    const body = encodeURIComponent(`Quero entrar na newsletter da DaBi Tech.\n\nE-mail: ${trimmedEmail}`);
+    const subject = encodeURIComponent(copy.newsletterSubject);
+    const body = encodeURIComponent(`${copy.newsletterBody}\n\nE-mail: ${trimmedEmail}`);
     window.location.href = `mailto:dabitech.ds@gmail.com?subject=${subject}&body=${body}`;
   };
 
@@ -28,12 +30,12 @@ export function PortfolioFooter({ isPageReady }: PortfolioFooterProps) {
     <footer className={isPageReady ? styles.footerEntered : styles.footer}>
       <div className={styles.footerBrand}>
         <span>DaBi Tech - Digital Solutions</span>
-        <span>Projetos digitais para marcas que precisam parecer maiores, mais fortes e mais profissionais.</span>
+        <span>{copy.brand}</span>
       </div>
 
       <form className={styles.newsletterForm} onSubmit={handleNewsletterSubmit}>
         <label className={styles.newsletterLabel} htmlFor="newsletter-email">
-          Newsletter
+          {copy.newsletterLabel}
         </label>
         <div className={styles.newsletterControls}>
           <input
@@ -41,12 +43,12 @@ export function PortfolioFooter({ isPageReady }: PortfolioFooterProps) {
             id="newsletter-email"
             name="email"
             onChange={(event) => setEmail(event.target.value)}
-            placeholder="Seu melhor e-mail"
+            placeholder={copy.newsletterPlaceholder}
             type="email"
             value={email}
           />
           <button className={styles.newsletterButton} type="submit">
-            Assinar
+            {copy.newsletterButton}
           </button>
         </div>
       </form>

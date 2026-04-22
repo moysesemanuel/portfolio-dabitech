@@ -11,8 +11,22 @@ import { PortfolioProjects } from "./blocks/portfolio-projects";
 import { PortfolioScrollStory } from "./blocks/portfolio-scroll-story";
 import { PortfolioServices } from "./blocks/portfolio-services";
 import { PortfolioSocialRail } from "./blocks/portfolio-social-rail";
-import { highlights, projects, services } from "./portfolio-home-page.data";
+import { portfolioContent, type PortfolioLocale } from "./portfolio-home-page.data";
 import styles from "./portfolio-shell.module.css";
+
+function getInitialLocale(): PortfolioLocale {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  const savedLocale = window.localStorage.getItem("portfolio-locale");
+
+  if (savedLocale === "en" || savedLocale === "pt-BR") {
+    return savedLocale;
+  }
+
+  return window.navigator.language.toLowerCase().startsWith("pt") ? "pt-BR" : "en";
+}
 
 export function PortfolioHomePage() {
   const pageRef = useRef<HTMLDivElement | null>(null);
@@ -25,6 +39,11 @@ export function PortfolioHomePage() {
   const [isPageReady, setIsPageReady] = useState(false);
   const [lightStoryProgress, setLightStoryProgress] = useState(0);
   const [darkStoryProgress, setDarkStoryProgress] = useState(0);
+  const [locale, setLocale] = useState<PortfolioLocale>(getInitialLocale);
+  const content = portfolioContent[locale];
+  const projects = content.projectsList;
+  const services = content.services.items;
+  const highlights = content.highlights;
   const featuredProject = projects[0];
   const activeProject = projects[activeProjectIndex];
 
@@ -209,6 +228,11 @@ export function PortfolioHomePage() {
     setActiveSection(hash);
   };
 
+  const handleLocaleChange = (nextLocale: PortfolioLocale) => {
+    setLocale(nextLocale);
+    window.localStorage.setItem("portfolio-locale", nextLocale);
+  };
+
   const handlePreviousProject = () => {
     setActiveProjectIndex((current) => (current === 0 ? projects.length - 1 : current - 1));
   };
@@ -230,19 +254,34 @@ export function PortfolioHomePage() {
       {isLoaderVisible ? <PortfolioLoader /> : null}
       <div className={styles.pageAura} aria-hidden="true" />
       <div className={styles.mouseGlow} aria-hidden="true" />
-      <PortfolioSocialRail />
-      <PortfolioHeader activeSection={activeSection} onNavClick={handleNavClick} />
+      <PortfolioSocialRail
+        instagramLabel={content.instagramLabel}
+        socialLabel={content.socialLabel}
+      />
+      <PortfolioHeader
+        activeSection={activeSection}
+        copy={content.header}
+        locale={locale}
+        onLocaleChange={handleLocaleChange}
+        onNavClick={handleNavClick}
+      />
 
       <main className={styles.main}>
-        <PortfolioHero featuredProject={featuredProject} highlights={highlights} isPageReady={isPageReady} />
+        <PortfolioHero
+          copy={content.hero}
+          featuredProject={featuredProject}
+          highlights={highlights}
+          isPageReady={isPageReady}
+        />
         <section className={styles.fullBleedWrap} ref={lightStoryRef}>
-          <PortfolioScrollStory mode="light" progress={lightStoryProgress} />
+          <PortfolioScrollStory copy={content.lightStory} mode="light" progress={lightStoryProgress} />
         </section>
-        <PortfolioMarquee projects={projects} />
-        <PortfolioServices isPageReady={isPageReady} services={services} />
+        <PortfolioMarquee copy={content.marquee} projects={projects} />
+        <PortfolioServices copy={content.services} isPageReady={isPageReady} services={services} />
         <PortfolioProjects
           activeProject={activeProject}
           activeProjectIndex={activeProjectIndex}
+          copy={content.projects}
           isPageReady={isPageReady}
           onNextProject={handleNextProject}
           onPreviousProject={handlePreviousProject}
@@ -250,10 +289,10 @@ export function PortfolioHomePage() {
           projects={projects}
         />
         <section className={styles.fullBleedWrap} ref={darkStoryRef}>
-          <PortfolioScrollStory mode="dark" progress={darkStoryProgress} />
+          <PortfolioScrollStory copy={content.darkStory} mode="dark" progress={darkStoryProgress} />
         </section>
-        <PortfolioContact isPageReady={isPageReady} />
-        <PortfolioFooter isPageReady={isPageReady} />
+        <PortfolioContact copy={content.contact} isPageReady={isPageReady} />
+        <PortfolioFooter copy={content.footer} isPageReady={isPageReady} />
       </main>
     </div>
   );

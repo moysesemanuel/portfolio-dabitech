@@ -1,22 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import sharedStyles from "../portfolio-shared.module.css";
-import type { PortfolioProject } from "../portfolio-home-page.data";
+import type { PortfolioProject, PortfolioProjectsCopy } from "../portfolio-home-page.data";
 import styles from "./portfolio-projects.module.css";
 
 type PortfolioProjectsProps = {
   activeProject: PortfolioProject;
   activeProjectIndex: number;
+  copy: PortfolioProjectsCopy;
   isPageReady: boolean;
   onNextProject: () => void;
   onPreviousProject: () => void;
   onSelectProject: (index: number) => void;
-  projects: readonly PortfolioProject[];
+  projects: PortfolioProject[];
 };
 
 export function PortfolioProjects({
   activeProject,
   activeProjectIndex,
+  copy,
   isPageReady,
   onNextProject,
   onPreviousProject,
@@ -29,12 +31,9 @@ export function PortfolioProjects({
       id="projetos"
     >
       <div className={sharedStyles.sectionHeading}>
-        <span className={sharedStyles.eyebrow}>Projetos</span>
-        <h2>Uma vitrine direta, navegável e com contexto suficiente para cada entrega.</h2>
-        <p>
-          Cada projeto combina visão de produto, interface publicada e recorte técnico real do que
-          foi desenvolvido.
-        </p>
+        <span className={sharedStyles.eyebrow}>{copy.eyebrow}</span>
+        <h2>{copy.title}</h2>
+        <p>{copy.description}</p>
       </div>
 
       <div className={styles.carouselShell}>
@@ -89,7 +88,7 @@ export function PortfolioProjects({
 
             <div className={styles.projectActions}>
               <Link className={`${sharedStyles.buttonBase} ${styles.projectPrimaryCta}`} href={activeProject.href}>
-                Abrir projeto completo
+                {copy.primaryCta}
               </Link>
             </div>
           </div>
@@ -98,24 +97,24 @@ export function PortfolioProjects({
         <div className={styles.carouselFooter}>
           <div className={styles.carouselControls}>
             <button
-              aria-label="Projeto anterior"
+              aria-label={copy.previousAria}
               className={styles.carouselButton}
               onClick={onPreviousProject}
               type="button"
             >
-              Anterior
+              {copy.previous}
             </button>
             <button
-              aria-label="Próximo projeto"
+              aria-label={copy.nextAria}
               className={styles.carouselButton}
               onClick={onNextProject}
               type="button"
             >
-              Próximo
+              {copy.next}
             </button>
           </div>
 
-          <div className={styles.carouselDots} role="tablist" aria-label="Projetos do portfólio">
+          <div className={styles.carouselDots} role="tablist" aria-label={copy.dotsAria}>
             {projects.map((project, index) => (
               <button
                 aria-label={`Ir para ${project.title}`}

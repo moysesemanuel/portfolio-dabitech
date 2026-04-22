@@ -1,6 +1,8 @@
+import type { PortfolioStoryCopy } from "../portfolio-home-page.data";
 import styles from "./portfolio-scroll-story.module.css";
 
 type PortfolioScrollStoryProps = {
+  copy: PortfolioStoryCopy;
   mode: "light" | "dark";
   progress: number;
 };
@@ -49,33 +51,7 @@ function renderTypingColorTitle(title: string, progress: number, className: stri
   );
 }
 
-const STORY_COPY = {
-  light: {
-    eyebrow: "Direção visual",
-    title: "Comece com o melhor design.",
-    body:
-      "A primeira dobra precisa parecer cara, controlada e intencional. Conforme a pessoa desce, a página deve provar isso com ritmo, contraste e clareza.",
-    details: [
-      "O texto sai do azul da marca e fecha em um tom mais escuro enquanto a leitura avança.",
-      "Cada bloco entra como continuação da história, não como um card solto disputando atenção.",
-      "O scroll conduz a percepção de valor antes mesmo de a pessoa ler tudo.",
-    ],
-  },
-  dark: {
-    eyebrow: "Apresentação em profundidade",
-    title: "Quando a base escurece, o conteúdo precisa ganhar densidade.",
-    body:
-      "Na parte preta, a leitura fica mais dramática. O texto nasce discreto e ganha brilho conforme o scroll, como uma sequência de produto flagship.",
-    details: [
-      "O contraste sobe junto com a rolagem para dar sensação de revelação.",
-      "O bloco serve para sustentar autoridade antes do fechamento e do contato.",
-      "Rodapé e CTA entram depois dessa descida, com a marca já bem posicionada.",
-    ],
-  },
-} as const;
-
-export function PortfolioScrollStory({ mode, progress }: PortfolioScrollStoryProps) {
-  const copy = STORY_COPY[mode];
+export function PortfolioScrollStory({ copy, mode, progress }: PortfolioScrollStoryProps) {
   const sectionClassName = mode === "light" ? styles.sectionLight : styles.sectionDark;
   const panelClassName = mode === "light" ? styles.panelLight : styles.panelDark;
   const textClassName = mode === "light" ? styles.copyLight : styles.copyDark;

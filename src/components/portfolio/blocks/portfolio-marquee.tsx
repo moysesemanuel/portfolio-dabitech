@@ -1,14 +1,15 @@
 import Image from "next/image";
-import type { PortfolioProject } from "../portfolio-home-page.data";
+import type { PortfolioMarqueeCopy, PortfolioProject } from "../portfolio-home-page.data";
 import styles from "./portfolio-marquee.module.css";
 
 type PortfolioMarqueeProps = {
-  projects: readonly PortfolioProject[];
+  copy: PortfolioMarqueeCopy;
+  projects: PortfolioProject[];
 };
 
 const TRACK_REPEATS = 2;
 
-export function PortfolioMarquee({ projects }: PortfolioMarqueeProps) {
+export function PortfolioMarquee({ copy, projects }: PortfolioMarqueeProps) {
   const marqueeItems = Array.from({ length: TRACK_REPEATS }, (_, repeatIndex) =>
     projects.map((project, index) => ({
       id: `${repeatIndex}-${project.href}`,
@@ -18,10 +19,10 @@ export function PortfolioMarquee({ projects }: PortfolioMarqueeProps) {
   ).flat();
 
   return (
-    <section aria-label="Prévia contínua dos projetos" className={styles.marqueeSection}>
+    <section aria-label={copy.ariaLabel} className={styles.marqueeSection}>
       <div className={styles.marqueeIntro}>
-        <span>Interface em movimento</span>
-        <p>Recortes reais das telas publicados em um ritmo contínuo, como uma vitrine de produto.</p>
+        <span>{copy.eyebrow}</span>
+        <p>{copy.description}</p>
       </div>
 
       <div className={styles.marqueeViewport}>
