@@ -184,24 +184,24 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     services: {
       eyebrow: "What this solves ?",
       title:
-        "Digital systems that reduce operational friction and make service businesses look more premium.",
+        "Digital systems that strengthen positioning, improve experience, and give the business a clearer structure to grow.",
       description:
-        "The goal is not only to ship a website or dashboard. It is to improve booking flow, customer perception, and internal routines in the same product decision.",
+        "The goal is not only to publish a website or dashboard. It is to make the business feel more solid, more organized, and easier to trust across customer-facing and internal flows.",
       items: [
         {
-          title: "Reduce manual booking work",
+          title: "Create a stronger first impression",
           description:
-            "Booking flows, availability logic, and clear customer paths help the business spend less time handling routine scheduling manually.",
+            "The right product framing helps the business communicate value, clarity, and trust before the visitor compares every detail.",
         },
         {
-          title: "Avoid double bookings and operational confusion",
+          title: "Organize operations with less friction",
           description:
-            "A clearer internal structure helps organize appointments, customers, and daily actions so the business can operate with more confidence.",
+            "Internal flows, permissions, and routines become easier to follow when the system is built around clearer responsibilities and everyday use.",
         },
         {
-          title: "Increase repeat revenue with retention mechanics",
+          title: "Support growth with a stronger digital base",
           description:
-            "Loyalty features, return triggers, and continuity-focused journeys turn visits into stronger customer retention.",
+            "Customer-facing platforms, internal systems, and shared infrastructure create a more stable foundation for expansion without improvised execution.",
         },
       ],
     },
@@ -233,14 +233,14 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
       eyebrow: "Contact",
       title: "Let’s build a stronger digital experience for your business.",
       paragraphs: [
-        "Ideal for barbershops, beauty studios, clinics, and local premium brands that want a better digital experience without generic execution.",
+        "Ideal for service businesses and specialist brands that need stronger positioning, clearer operations, and a digital experience that feels more solid.",
         "The process starts with business goals, customer flow, and commercial positioning. From there, I turn that direction into a published solution that improves perception, organization, and day-to-day use.",
       ],
       whatsappCta: "Ask for a quote on WhatsApp",
     },
     footer: {
       brand:
-        "Premium digital systems for service businesses that need more bookings, better operations, and stronger perceived value.",
+        "Premium digital systems for businesses that need stronger positioning, clearer operations, and more trust in the way they are experienced.",
       newsletterLabel: "Newsletter",
       newsletterPlaceholder: "Your best email",
       newsletterButton: "Subscribe",
@@ -266,14 +266,14 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     projectsList: [
       {
         eyebrow: "Customer experience",
-        title: "Booking and retention platform for barbershops",
+        title: "Customer platform with positioning and operations built together",
         description:
-          "A digital platform designed to help grooming businesses increase booking conversion, improve day-to-day organization, and strengthen customer loyalty through a more premium experience.",
+          "A digital platform that combines commercial presence, customer journey, and internal routine in one product, showing how service businesses can feel more premium and more organized at the same time.",
         meta: [
-          "Booking conversion",
-          "Customer loyalty",
-          "Daily operations",
-          "Recurring revenue",
+          "Commercial positioning",
+          "Customer journey",
+          "Operational clarity",
+          "Integrated delivery",
         ],
         href: "/portfolio/barbearia",
         imageSrc: "/img/localhost_3001_admin_agenda.png",
@@ -282,7 +282,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         imageHeight: 11084,
         scopeTitle: "Business impact",
         scopeDescription:
-          "Built to simulate a real commercial workflow for service businesses, with focus on booking conversion, retention, and day-to-day operations.",
+          "The case shows how customer-facing experience and internal structure can reinforce each other inside one coherent digital product.",
       },
       {
         eyebrow: "Content platform",
@@ -296,24 +296,24 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
           "Specialized brand structure",
         ],
         href: "/portfolio/lana-baby-lab",
-        imageSrc: "/img/portfolio-lana-baby-lab-preview.svg",
+        imageSrc: "/img/portfolio-lana-baby-lab-preview.png",
         imageAlt: "Preview of the Lana Baby Lab platform",
-        imageWidth: 1400,
-        imageHeight: 900,
+        imageWidth: 2560,
+        imageHeight: 1318,
         scopeTitle: "Business impact",
         scopeDescription:
           "The product improves authority, publishing structure, and premium perception for a specialized brand that needs trust and consistency.",
       },
       {
         eyebrow: "Commercial operations",
-        title: "Sales platform with commercial landing flow",
+        title: "Commercial platform built around pipeline visibility",
         description:
-          "A commercial platform built to capture leads, organize follow-up, and give the business more visibility over pipeline, conversion, and positioning.",
+          "A commercial platform built to structure lead capture, follow-up, and sales visibility in a way that feels closer to a real revenue operation than to an isolated interface demo.",
         meta: [
           "Lead capture",
-          "Commercial flow",
           "Pipeline visibility",
-          "Stronger positioning",
+          "Commercial routine",
+          "Product credibility",
         ],
         href: "/portfolio/sistema-vendas",
         imageSrc: "/img/portfolio-sales-system-real-preview.png",
@@ -322,17 +322,17 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         imageHeight: 1928,
         scopeTitle: "Business impact",
         scopeDescription:
-          "Positioned as a solution instead of a technical demo, the project shows how presentation and product structure can raise perceived market value.",
+          "The project makes the commercial layer feel concrete, with clearer revenue logic, stronger product framing, and more believable operational value.",
       },
       {
         eyebrow: "Infrastructure",
         title: "Authentication hub for multiple systems",
         description:
-          "A centralized authentication foundation for digital ecosystems that need consistent access control, reusable login flows, and cleaner expansion across products.",
+          "A centralized access foundation for digital ecosystems that need consistent entry points, shared trust, and a cleaner path to expand across multiple products.",
         meta: [
-          "Centralized access",
-          "Session consistency",
-          "Reusable login flow",
+          "Shared access layer",
+          "Ecosystem consistency",
+          "Reusable entry flow",
           "Expansion readiness",
         ],
         href: "/portfolio/central-autenticacao",
@@ -342,13 +342,13 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         imageHeight: 1750,
         scopeTitle: "Business impact",
         scopeDescription:
-          "The architecture reduces duplication across products and prepares the ecosystem for secure authentication growth without restarting from scratch.",
+          "The structure reduces fragmentation between products and gives the ecosystem a more reliable base to grow without rebuilding access logic every time.",
       },
       {
         eyebrow: "Internal operations",
-        title: "Support and ticket workflow platform",
+        title: "Support workflow with clearer responsibility across teams",
         description:
-          "An internal operations platform created to organize requests, improve response flow, and make service routines clearer for both teams and clients.",
+          "An internal workflow platform designed to organize requests, clarify ownership, and make response routines easier to manage for both teams and customers.",
         meta: [
           "Service requests",
           "Clear ownership",
@@ -362,7 +362,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         imageHeight: 900,
         scopeTitle: "Business impact",
         scopeDescription:
-          "The product improves service perception, response organization, and operational reliability in workflows that depend on clear ownership and status visibility.",
+          "The product improves service clarity, response accountability, and operational confidence in workflows that depend on visible responsibility.",
       },
     ],
   },
@@ -387,7 +387,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         "Melhor experiência do cliente",
       ],
       title:
-        "Sistemas digitais para negócios de serviço que precisam de posicionamento mais forte, operação mais fluida e melhor experiência para o cliente.",
+        "Sistemas digitais para negócios de serviço com mais valor, fluidez e experiência.",
       lead:
         "Eu construo plataformas web que ajudam negócios de serviço a aumentar valor percebido, organizar a operação e criar jornadas mais claras para o cliente — da apresentação comercial ao uso no dia a dia.",
       evidence: [
@@ -432,24 +432,24 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     services: {
       eyebrow: "O que isso resolve ?",
       title:
-        "Sistemas digitais que reduzem atrito operacional e fazem negócios de serviço parecerem mais premium.",
+        "Sistemas digitais que fortalecem posicionamento, melhoram a experiência e dão ao negócio uma estrutura mais clara para crescer.",
       description:
-        "O objetivo não é só publicar um site ou dashboard. É melhorar agendamento, percepção de valor e rotina interna dentro da mesma decisão de produto.",
+        "O objetivo não é só publicar um site ou dashboard. É fazer o negócio parecer mais sólido, mais organizado e mais confiável nos fluxos voltados ao cliente e na rotina interna.",
       items: [
         {
-          title: "Reduzir trabalho manual com agendamentos",
+          title: "Criar uma primeira impressão mais forte",
           description:
-            "Fluxos de booking, lógica de disponibilidade e caminhos mais claros fazem a empresa gastar menos tempo lidando manualmente com agendamentos.",
+            "O enquadramento certo de produto ajuda o negócio a comunicar valor, clareza e confiança antes mesmo de o cliente comparar cada detalhe.",
         },
         {
-          title: "Evitar choques de agenda e ruído operacional",
+          title: "Organizar a operação com menos atrito",
           description:
-            "Uma estrutura interna mais clara ajuda a organizar horários, clientes e ações do dia a dia para a operação rodar com mais segurança.",
+            "Fluxos internos, permissões e rotinas ficam mais fáceis de sustentar quando o sistema é desenhado com responsabilidades mais claras e uso real no dia a dia.",
         },
         {
-          title: "Aumentar recorrência com mecânicas de retenção",
+          title: "Sustentar crescimento com uma base digital mais forte",
           description:
-            "Recursos de fidelidade, gatilhos de retorno e jornadas de continuidade ajudam a transformar visitas em receita repetida.",
+            "Plataformas voltadas ao cliente, sistemas internos e infraestrutura compartilhada criam uma base mais estável para expandir sem execução improvisada.",
         },
       ],
     },
@@ -482,14 +482,14 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
       eyebrow: "Contato",
       title: "Vamos construir uma experiência digital mais forte para o seu negócio.",
       paragraphs: [
-        "Ideal para barbearias, estúdios de beleza, clínicas e marcas locais premium que querem uma experiência digital melhor sem execução genérica.",
+        "Ideal para negócios de serviço e marcas especialistas que precisam de posicionamento mais forte, operação mais clara e uma experiência digital mais sólida.",
         "O processo começa por objetivo de negócio, fluxo do cliente e posicionamento comercial. A partir disso, eu transformo essa direção em uma solução publicada que melhora percepção, organização e uso no dia a dia.",
       ],
       whatsappCta: "Pedir orçamento no WhatsApp",
     },
     footer: {
       brand:
-        "Sistemas digitais premium para negócios de serviço que precisam de mais agendamentos, operação melhor e maior valor percebido.",
+        "Sistemas digitais premium para negócios que precisam de posicionamento mais forte, operação mais clara e mais confiança na forma como são percebidos.",
       newsletterLabel: "Newsletter",
       newsletterPlaceholder: "Seu melhor e-mail",
       newsletterButton: "Assinar",
@@ -515,14 +515,14 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
     projectsList: [
       {
         eyebrow: "Experiência do cliente",
-        title: "Plataforma de agendamento e retenção para barbearias",
+        title: "Plataforma para cliente com posicionamento e operação conectados",
         description:
-          "Uma plataforma digital pensada para ajudar negócios de grooming a aumentar a conversão em agendamentos, melhorar a organização do dia a dia e fortalecer a fidelização com uma experiência mais premium.",
+          "Uma plataforma digital que une presença comercial, jornada do cliente e rotina interna no mesmo produto, mostrando como negócios de serviço podem parecer mais premium e mais organizados ao mesmo tempo.",
         meta: [
-          "Conversão em agendamentos",
-          "Fidelização de clientes",
-          "Operação diária",
-          "Receita recorrente",
+          "Posicionamento comercial",
+          "Jornada do cliente",
+          "Clareza operacional",
+          "Entrega integrada",
         ],
         href: "/portfolio/barbearia",
         imageSrc: "/img/localhost_3001_admin_agenda.png",
@@ -532,7 +532,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         imageHeight: 11084,
         scopeTitle: "Impacto no negócio",
         scopeDescription:
-          "Construído para simular um fluxo comercial real de negócios de serviço, com foco em conversão de agendamento, retenção e operação do dia a dia.",
+          "O case mostra como experiência voltada ao cliente e estrutura interna podem se reforçar dentro de um único produto digital coerente.",
       },
       {
         eyebrow: "Plataforma de conteúdo",
@@ -546,24 +546,24 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
           "Estrutura de marca especializada",
         ],
         href: "/portfolio/lana-baby-lab",
-        imageSrc: "/img/portfolio-lana-baby-lab-preview.svg",
+        imageSrc: "/img/portfolio-lana-baby-lab-preview.png",
         imageAlt: "Preview da plataforma Lana Baby Lab",
-        imageWidth: 1400,
-        imageHeight: 900,
+        imageWidth: 2560,
+        imageHeight: 1318,
         scopeTitle: "Impacto no negócio",
         scopeDescription:
           "O produto melhora autoridade, organização editorial e percepção premium para uma marca especializada que depende de confiança e consistência.",
       },
       {
         eyebrow: "Operação comercial",
-        title: "Plataforma comercial com landing page de vendas",
+        title: "Plataforma comercial construída em torno de visibilidade de funil",
         description:
-          "Uma plataforma comercial criada para captar leads, organizar acompanhamento e dar ao negócio mais visibilidade sobre funil, conversão e posicionamento.",
+          "Uma plataforma comercial criada para estruturar captação, acompanhamento e visibilidade de vendas de um jeito que parece muito mais uma operação real de receita do que uma interface isolada.",
         meta: [
           "Captação de leads",
-          "Fluxo comercial",
           "Visibilidade do funil",
-          "Posicionamento mais forte",
+          "Rotina comercial",
+          "Credibilidade de produto",
         ],
         href: "/portfolio/sistema-vendas",
         imageSrc: "/img/portfolio-sales-system-real-preview.png",
@@ -572,17 +572,17 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         imageHeight: 1928,
         scopeTitle: "Impacto no negócio",
         scopeDescription:
-          "Posicionado como solução e não como demo técnica, o projeto mostra como apresentação e estrutura de produto elevam valor percebido no mercado.",
+          "O projeto torna a camada comercial mais concreta, com lógica de receita mais clara, enquadramento mais forte e valor operacional mais convincente.",
       },
       {
         eyebrow: "Infraestrutura",
         title: "Central de autenticação para múltiplos sistemas",
         description:
-          "Uma fundação de autenticação centralizada para ecossistemas digitais que precisam de controle de acesso consistente, fluxos reutilizáveis de login e expansão mais organizada entre produtos.",
+          "Uma base centralizada de acesso para ecossistemas digitais que precisam de entrada consistente, confiança compartilhada e caminho mais limpo para crescer entre produtos.",
         meta: [
-          "Acesso centralizado",
-          "Consistência de sessão",
-          "Fluxo reutilizável de login",
+          "Camada compartilhada de acesso",
+          "Consistência entre produtos",
+          "Fluxo reutilizável de entrada",
           "Pronto para expansão",
         ],
         href: "/portfolio/central-autenticacao",
@@ -592,13 +592,13 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         imageHeight: 1750,
         scopeTitle: "Impacto no negócio",
         scopeDescription:
-          "A arquitetura reduz repetição entre produtos e prepara o ecossistema para crescer com autenticação segura sem precisar recomeçar do zero.",
+          "A estrutura reduz fragmentação entre produtos e cria uma base mais confiável para o ecossistema crescer sem refazer a lógica de acesso a cada nova entrega.",
       },
       {
         eyebrow: "Operação interna",
-        title: "Plataforma de suporte e fluxo de chamados",
+        title: "Fluxo de suporte com responsabilidade mais clara entre equipes",
         description:
-          "Uma plataforma de operação interna criada para organizar solicitações, melhorar o fluxo de resposta e tornar as rotinas de atendimento mais claras para equipes e clientes.",
+          "Uma plataforma de operação interna criada para organizar solicitações, clarificar responsabilidade e tornar a rotina de resposta mais compreensível para equipes e clientes.",
         meta: [
           "Solicitações de serviço",
           "Responsabilidade clara",
@@ -612,7 +612,7 @@ export const portfolioContent: Record<PortfolioLocale, PortfolioHomeContent> = {
         imageHeight: 900,
         scopeTitle: "Impacto no negócio",
         scopeDescription:
-          "O produto melhora percepção de atendimento, organização de resposta e confiabilidade operacional em rotinas que dependem de clareza de responsabilidade.",
+          "O produto melhora clareza de atendimento, responsabilidade de resposta e confiança operacional em rotinas que dependem de dono visível e fluxo bem definido.",
       },
     ],
   },
