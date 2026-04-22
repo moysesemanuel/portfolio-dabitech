@@ -5,19 +5,20 @@
   gap: 18px;
   justify-items: center;
   left: 40px;
+  mix-blend-mode: difference;
   position: fixed;
   z-index: 10;
 }
 
 .socialRail::after {
-  background: rgba(221, 232, 249, 0.32);
+  background: rgba(255, 255, 255, 0.92);
   content: "";
   height: 96px;
   width: 1px;
 }
 
 .socialRailLink {
-  color: rgba(221, 232, 249, 0.82);
+  color: rgba(255, 255, 255, 0.96);
   display: inline-flex;
   padding: 10px;
   text-decoration: none;
@@ -33,7 +34,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .socialRailLink:hover {
-    color: var(--blue);
+    color: #ffffff;
     transform: translateY(-2px);
   }
 }

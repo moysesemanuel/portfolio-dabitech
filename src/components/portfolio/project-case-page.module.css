@@ -42,6 +42,7 @@
   display: grid;
   align-content: center;
   gap: 20px;
+  padding-top: 72px;
 }
 
 .backButton {
@@ -257,6 +258,10 @@
   .backButton {
     left: 20px;
     top: 20px;
+  }
+
+  .heroCopy {
+    padding-top: 64px;
   }
 
   .actions {

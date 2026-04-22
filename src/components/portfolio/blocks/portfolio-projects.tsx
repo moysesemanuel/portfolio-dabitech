@@ -58,6 +58,7 @@ export function PortfolioProjects({
             <Image
               alt={activeProject.imageAlt}
               height={activeProject.imageHeight}
+              loading={activeProjectIndex === 0 ? "eager" : "lazy"}
               src={activeProject.imageSrc}
               width={activeProject.imageWidth}
             />

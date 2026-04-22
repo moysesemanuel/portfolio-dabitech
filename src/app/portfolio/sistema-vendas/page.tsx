@@ -14,14 +14,14 @@ const features = [
       "A aplicação foi desenhada para evoluir como produto independente, com base própria para banco, regras de negócio e deploy.",
   },
   {
-    title: "Interface de ERP comercial",
+    title: "Estrutura comercial com leitura de produto real",
     description:
-      "Sidebar fixa, busca global, dashboard por módulo e fluxo preparado para cadastro, operação e acompanhamento.",
+      "A estrutura de navegação, módulos e leitura de indicadores aproxima o projeto de uma operação comercial utilizável, não de um conceito solto.",
   },
   {
     title: "Base pronta para evolução",
     description:
-      "A vitrine publicada apresenta o produto sem depender da aplicação operacional completa, preservando espaço para evolução técnica independente.",
+      "A vitrine publicada apresenta o produto como uma base comercial consistente, preservando espaço para evolução operacional e técnica independente.",
   },
 ] as const;
 
@@ -30,9 +30,9 @@ export default function PortfolioSalesSystemPage() {
     <ProjectCasePage
       delivery={[
         {
-          title: "Estrutura comercial publicada com narrativa clara",
+          title: "Estrutura comercial publicada com narrativa mais convincente",
           description:
-            "A landing organiza proposta, benefícios e visão do produto de forma mais convincente para negócio e operação.",
+            "A landing organiza proposta, benefícios e visão do produto de forma mais convincente para negócio, operação e leitura comercial.",
         },
         {
           title: "Base para cadastros, vendas e acompanhamento",
@@ -40,17 +40,17 @@ export default function PortfolioSalesSystemPage() {
             "O case apresenta um produto preparado para clientes, produtos, estoque, vendas e leitura de indicadores em uma mesma experiência.",
         },
         {
-          title: "Produto desenhado para seguir como SaaS",
+          title: "Produto desenhado para sustentar rotina comercial",
           description:
-            "A arquitetura apresentada favorece evolução contínua, desacoplamento e publicação independente da vitrine principal.",
+            "A arquitetura apresentada favorece continuidade, desacoplamento e amadurecimento de um fluxo comercial que pode seguir evoluindo como produto.",
         },
         {
-          title: "Posicionamento mais forte para um ERP comercial",
+          title: "Posicionamento mais forte para uma estrutura de vendas real",
           description:
             "A página agora trata o projeto como produto, não só como tela solta, o que melhora percepção de maturidade e valor.",
         },
       ]}
-      description="Case de um sistema comercial pensado para unir landing, visão de produto e operação interna em uma estrutura capaz de evoluir como SaaS. O foco aqui é mostrar clareza de proposta, arquitetura de módulos e contexto de negócio."
+      description="Case de uma plataforma comercial pensada para unir captação, acompanhamento, indicadores e rotina interna em uma estrutura que parece uma operação real de vendas. O foco aqui é mostrar clareza comercial, contexto de produto e valor de negócio."
       externalLinks={[
         {
           href: "https://sales-system-hazel.vercel.app",
@@ -59,9 +59,9 @@ export default function PortfolioSalesSystemPage() {
       ]}
       features={features}
       metrics={[
-        { label: "Modelo", value: "ERP comercial com narrativa de produto" },
-        { label: "Foco", value: "Operação, indicadores e evolução SaaS" },
-        { label: "Entrega", value: "Interface publicada com contexto técnico" },
+        { label: "Modelo", value: "Plataforma comercial com narrativa de produto" },
+        { label: "Foco", value: "Captação, indicadores e rotina de vendas" },
+        { label: "Entrega", value: "Interface publicada com contexto de negócio" },
       ]}
       modules={modules}
       previewAlt="Dashboard do sistema de vendas"
@@ -69,7 +69,7 @@ export default function PortfolioSalesSystemPage() {
       previewHeight={1928}
       previewSrc="/img/portfolio-sales-system-real-preview.png"
       previewWidth={3456}
-      subtitle="Fluxo comercial organizado para uso real."
+      subtitle="Fluxo comercial organizado para uma operação que parece real."
       title="Sistema de vendas"
     />
   );

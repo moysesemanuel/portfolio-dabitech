@@ -63,6 +63,7 @@ export function PortfolioHero({ copy, featuredProject, highlights, isPageReady }
           <Image
             alt={featuredProject.imageAlt}
             height={featuredProject.imageHeight}
+            loading="eager"
             priority
             src={featuredProject.imageSrc}
             width={featuredProject.imageWidth}

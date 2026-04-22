@@ -2,9 +2,9 @@ import { ProjectCasePage } from "@/components/portfolio/project-case-page";
 
 const modules = [
   "Tela web de login e cadastro com seleção de aplicação de destino",
-  "Sessão central em cookie HTTP-only com persistência em PostgreSQL",
-  "Middleware para leitura de sessão e proteção de rotas autenticadas",
-  "Fluxo de handoff preparado para ERP, help desk e novos produtos",
+  "Camada central de sessão para manter acesso consistente entre produtos",
+  "Proteção de rotas e leitura de contexto para áreas privadas",
+  "Fluxo de handoff preparado para múltiplos produtos conectados",
 ] as const;
 
 const features = [
@@ -14,14 +14,14 @@ const features = [
       "O projeto foi desenhado para servir mais de um sistema, concentrando login, sessão e regras de acesso em uma base única e reaproveitável.",
   },
   {
-    title: "Backend organizado por camadas",
+    title: "Arquitetura organizada para expansão gradual",
     description:
-      "Rotas, controllers, services, middlewares e utilitários foram separados para facilitar manutenção, crescimento do fluxo e clareza de responsabilidades.",
+      "A base foi organizada para facilitar manutenção, expansão do fluxo e clareza de responsabilidades conforme o ecossistema digital cresce.",
   },
   {
-    title: "Base pronta para evoluir em SSO real",
+    title: "Base pronta para evoluir como núcleo compartilhado",
     description:
-      "A estrutura atual já contempla cookie seguro, sessão persistida, troca de contexto entre aplicações e espaço para aprofundar autorização e handoff.",
+      "A estrutura atual já sustenta troca de contexto entre aplicações e abre espaço para aprofundar autorização, governança de acesso e continuidade entre produtos.",
   },
 ] as const;
 
@@ -32,17 +32,17 @@ export default function PortfolioAuthCentralPage() {
         {
           title: "Entrada única para mais de um produto",
           description:
-            "O case mostra como ERP, help desk e novos sistemas podem compartilhar uma mesma camada de autenticação, reduzindo duplicação e inconsistência.",
+            "O case mostra como diferentes produtos podem compartilhar uma mesma base de acesso, reduzindo duplicação e inconsistência no ecossistema.",
         },
         {
-          title: "Fluxo de acesso com mais segurança e controle",
+          title: "Fluxo de acesso com mais confiança e controle",
           description:
-            "Sessão em cookie HTTP-only, persistência em banco e middleware de autenticação reforçam a base técnica para uso real em produtos privados.",
+            "A estrutura de sessão e proteção de áreas privadas reforça uma base confiável para produtos que dependem de continuidade entre login, uso e expansão.",
         },
         {
           title: "Arquitetura preparada para crescer com o ecossistema",
           description:
-            "A proposta já nasce com banco, serviços, validação e handoff entre aplicações, criando espaço para evolução gradual sem recomeçar do zero.",
+            "A proposta já nasce com responsabilidades bem separadas e handoff entre aplicações, criando espaço para evolução gradual sem recomeçar do zero.",
         },
         {
           title: "Mais maturidade para produtos que dependem de login",
@@ -50,7 +50,7 @@ export default function PortfolioAuthCentralPage() {
             "Em vez de repetir telas isoladas de acesso, o projeto apresenta uma central capaz de sustentar múltiplos fluxos com lógica compartilhada.",
         },
       ]}
-      description="Case de uma central de autenticação pensada para múltiplos sistemas, com login, cadastro, sessão persistida, proteção de rotas e base preparada para handoff entre aplicações. O foco aqui é mostrar autenticação como infraestrutura de produto, não só como tela de acesso."
+      description="Case de uma central de autenticação pensada para múltiplos sistemas, com entrada consistente, continuidade entre produtos e base preparada para sustentar um ecossistema digital mais organizado. O foco aqui é mostrar acesso como infraestrutura de produto, não só como mecanismo técnico."
       externalLinks={[
         {
           href: "https://login-system-ivory-seven.vercel.app",
@@ -59,9 +59,9 @@ export default function PortfolioAuthCentralPage() {
       ]}
       features={features}
       metrics={[
-        { label: "Modelo", value: "Auth central para ERP e help desk" },
-        { label: "Foco", value: "Sessão, segurança e reutilização entre apps" },
-        { label: "Entrega", value: "Node.js, Express, Prisma e PostgreSQL" },
+        { label: "Modelo", value: "Núcleo de acesso para ecossistema digital" },
+        { label: "Foco", value: "Consistência, confiança e reutilização entre produtos" },
+        { label: "Entrega", value: "Base centralizada para login e continuidade" },
       ]}
       modules={modules}
       previewAlt="Tela da central de autenticação"
@@ -69,7 +69,7 @@ export default function PortfolioAuthCentralPage() {
       previewHeight={1750}
       previewSrc="/img/portfolio-auth-system-real-preview.png"
       previewWidth={3454}
-      subtitle="Autenticação organizada como núcleo compartilhado entre sistemas."
+      subtitle="Acesso organizado como base compartilhada entre sistemas."
       title="Central de autenticação"
     />
   );
